@@ -1,5 +1,5 @@
-# Use the official PHP 8.0 image as the base image
-FROM php:8.0-fpm
+# Use the official PHP 8.2 image as the base image
+FROM php:8.2-fpm
 
 # Install required system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+
+    
 # Set working directory
 WORKDIR /var/www/html
 

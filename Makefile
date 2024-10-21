@@ -11,6 +11,11 @@ rebuild:
 	./vendor/bin/sail up --build -d
 recache:
 	./vendor/bin/sail artisan config:cache
+clear:
+	./vendor/bin/sail artisan cache:clear
+	./vendor/bin/sail artisan config:clear
+	./vendor/bin/sail artisan route:clear
+	./vendor/bin/sail artisan view:clear
 restart:
 	./vendor/bin/sail restart
 stop:
