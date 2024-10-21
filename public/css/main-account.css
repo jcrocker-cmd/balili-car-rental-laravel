@@ -1,0 +1,826 @@
+.main-user-account-section
+{
+    margin-top: 140px;
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* MAIN USER ACCOUNT 1 */
+
+.user-account-section
+{
+    /* background-color: rgb(241, 240, 240); */
+    padding: 40px 80px;
+    height: 100%;
+    width: 100%;
+    /* background: url("/images/profile/bg.jpg"); */
+    background: #7594e2;
+    background-size: cover;
+    background-repeat: no-repeat;
+  	background-position: center;
+    /* opacity: 0.5; */
+}
+
+.user-account-wrapper
+{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.user-account-wrapper .line
+{
+    height: 150px;
+    width: 2px;
+    background-color: #000;
+    align-items: center;
+}
+
+.user-account-wrapper .info
+{
+    display: flex;
+    gap: 100px;
+}
+
+
+.user-account-wrapper .info-sub-1
+{
+    font-size: 15px;
+}
+
+
+.info .timestamp
+{
+    font-size: 13px;
+    font-style: italic;
+}
+
+.account-settings-buttons
+{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+
+.account-settings-buttons .btn-edit
+{
+    color: rgb(0, 38, 253);
+    border: 1px solid rgb(0, 38, 253);
+}
+
+.account-settings-buttons .btn-edit-pass
+{
+    color: #D7A717;
+    border: 1px solid #D7A717;
+
+}
+
+.account-settings-buttons .btn-edit , .account-settings-buttons .btn-edit-pass
+{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.account-settings-buttons .btn-edit:hover
+{
+    background-color: rgb(0, 38, 253);
+    color: #fff;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+.account-settings-buttons .btn-edit-pass:hover
+{
+    background-color: #D7A717;
+    color: #fff;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.user-account-section img
+{
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@media only screen and (max-width:1016px)
+
+{
+
+    .user-account-wrapper .info
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+}
+@media (max-width:805px) 
+{
+    .main-user-account-section
+    {
+        margin-top: 130px;
+    }
+}
+
+@media (max-width:780px) 
+{
+    .user-account-wrapper
+    {
+        flex-direction: column;
+    }
+
+    .user-account-wrapper
+    {
+       align-items: flex-start;
+    }
+
+    .user-account-wrapper img
+    {
+        margin: auto;
+    }
+
+    .user-account-wrapper .line
+    {
+        height: 3px;
+        width: 100%;
+    }
+
+    .account-settings-buttons
+    {
+        justify-content: start;
+    }
+    .user-account-section
+    {
+        padding: 40px 20px;
+    }
+    .user-account-section img
+    {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+    }
+}
+
+
+/* MAIN USER ACCOUNT 2 */
+
+.user-account-section2
+{
+    padding: 40px 80px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* MY RENTALS */
+
+.myrental-wrapper
+{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.rental-badge {
+    position: relative;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 4px;
+    min-width: 20px;
+    text-align: center;
+    top: -10px;
+    margin-left: 5px;
+    height: 20px;
+    width: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  
+  
+.rental-card
+{
+    padding: 15px 20px;
+    border: 1px solid #000;
+}
+
+.rental-top
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.rental-top .buttons
+{
+    gap: 10px;
+    font-size: 12px;
+}
+
+.rental-top .statuses span
+{
+    font-size: 12px;
+}
+
+.rental-top .action-view-booking
+{
+    background-color: rgb(0, 143, 253);
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.rental-top .action-rating
+{
+    background-color: #eab906;
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+#ratingsModal .modal-footer button
+{
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+}
+
+.rating-txt label
+{
+   margin-bottom: 8px;
+}
+
+.rating-txt textarea
+{
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.rating-title span
+{
+    font-size: 15px;
+}
+
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+  
+  .rating input[type="radio"] {
+    display: none;
+  }
+  
+  .rating label {
+    cursor: pointer;
+    font-size: 25px;
+    color: #ddd;
+    margin-right: 5px;
+  }
+  
+  .rating input[type="radio"]:checked ~ label {
+    color: #ffca08;
+  }
+  
+  .rating label i {
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .rating input[type="radio"]:checked ~ label i:before {
+    content: "\f005";
+    color: #ffca08;
+  }
+
+.rental-top .action-cancel
+{
+    background-color: rgb(230, 196, 61);
+    color: #fff;
+    outline: none;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+
+.rental-mid
+{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.rental-mid .group
+{
+    display: flex;
+    gap: 40px;
+}
+
+.rental-mid img
+{
+    width: 120px;
+}
+
+.rental-mid p
+{
+    font-size: 14px;
+}
+
+.rental-bottom
+{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.rental-bottom span
+{
+    font-size: 14px;
+}
+
+/* RATINGS */
+
+.myratings-wrapper
+{
+    background-color: #ffffff;
+    color: #000000;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ratings-card
+{
+    display: flex;
+}
+
+.ratings-card .ratings-col-1 img
+{
+    width: 150px;
+    margin-top: 10px;
+}
+.ratings-card .ratings-col-1
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-basis: 20%;
+    border: 1px solid #000;
+    /* background-color: #a8a4a4; */
+    padding: 20px;
+
+}
+.ratings-card .ratings-col-2
+{
+    display: flex;
+    flex-basis: 80%;
+    padding: 20px;
+    background-color: #efeeee;
+}
+
+.ratings-col-2 .ratings-buttons
+{
+    font-size: 14px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.ratings-card .ratings-col-1 span,
+.ratings-card .ratings-col-2 p,
+.ratings-col-2 .rating-star .fas,
+.ratings-col-2 .rating-star span
+{
+    font-size: 14px;
+}
+
+/* MODAL TABLES */
+#modalTable,
+#modalTable thead ,
+#modalTable tbody,
+#ratingsModal input,
+#ratingsModal label,
+#ratingsModal span,
+#viewModalRating input,
+#viewModalRating label,
+#editModalRating input,
+#editModalRating label,
+#editModalRating select,
+#editModalRating textarea
+{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.modal-title,
+.modal-body .created_at ,
+.modal button ,
+.modal-content 
+{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+/* DELETE ACCOUNT */
+.delete-account-wrapper
+{
+    background-color: #F8D7DA;
+    color: #842029;
+    padding: 25px 30px;
+    border-radius: 5px;
+    /* gap: 5px; */
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.delete-account-wrapper .btn-delete
+{
+    display: flex;
+    background-color: #842029;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    gap: 100px;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    text-decoration: none;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.delete-button
+{
+    display: flex;
+    justify-content: end;
+}
+
+/* Table */
+.table-responsive,
+#clientTable,
+#clientTable thead ,
+#clientTable tbody 
+{
+    font-size: 13px;
+}
+
+@media (max-width:936px) 
+{
+    .rental-mid 
+    {
+        flex-direction: column;
+    }
+    
+}
+
+@media (max-width:794px) 
+{
+    .rental-mid .group
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
+
+@media (max-width:780px) 
+{
+    .user-account-section2
+    {
+        padding: 40px 20px;
+    }
+    
+}
+
+@media (max-width:780px) 
+{
+    .ratings-card
+    {
+        flex-direction: column;
+    }
+    .ratings-card .ratings-col-1 img
+    {
+        width: 120px;
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width:500px) 
+{
+    .user-account-section p ,
+    .user-account-section .timestamp ,
+    .account-settings-buttons .btn-edit , 
+    .account-settings-buttons .btn-edit-pass ,
+    .delete-account-wrapper p, 
+    .delete-account-wrapper span,
+    .user-account-section2 .myrental-wrapper h6,
+    .user-account-section2 .myratings-wrapper h6,
+    .ratings-card .ratings-col-1 span,
+    .ratings-card .ratings-col-2 p,
+    .ratings-col-2 .rating-star .fas,
+    .ratings-col-2 .rating-star span
+
+
+    {
+        font-size: 11px;
+    }
+
+    .user-account-wrapper .line
+    {
+        width: 100%;
+        height: 1px;
+    }
+
+    .user-account-section img
+    {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    .user-account-wrapper
+    {
+        gap: 30px;
+    }
+
+    .delete-account-wrapper h5,
+    .user-account-section2 .myrental-wrapper h5,
+    .user-account-section2 .myratings-wrapper h5
+    {
+        font-size: 15px;
+    }
+
+    .user-account-section2 .myrental-wrapper .rental-badge,
+    .user-account-section2 .myratings-wrapper .rental-badge
+
+    {
+        font-size: 10px;
+    }
+
+    .rental-top span ,
+    .rental-bottom span
+    {
+        font-size: 12px;
+    }
+
+    .rental-mid img
+    {
+        width: 120px;
+    }
+
+    .rental-mid .group p
+    {
+        font-size: 11px;
+    }
+
+    
+}
+
+@media (max-width:400px) 
+{
+    .myrental-wrapper ,
+    .myratings-wrapper ,
+    .delete-account-wrapper
+    {
+        padding: 20px 15px;
+    }
+    
+}
+
+@media (max-width:600px) 
+{
+    /* MODAL TABLES */
+    #modalTable,
+    #modalTable thead ,
+    #modalTable tbody,
+    #ratingsModal input,
+    #ratingsModal label,
+    #ratingsModal span,
+    #viewModalRating input,
+    #viewModalRating label,
+    #editModalRating input,
+    #editModalRating label,
+    #editModalRating select,
+    #editModalRating textarea
+    {
+        font-size: 11px;
+    }
+
+    .modal-title,
+    .modal-body .created_at ,
+    .modal button ,
+    .modal-content ,
+    .modal-body form input ,
+    .modal-body form select
+    {
+        font-size: 11px;
+    }
+    .account-settings-buttons
+    {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+
+
+
+/* ACCOUNT SETTINGS */
+.settings
+{
+    width: 100%;
+}
+
+.settings .settings-col-1 img
+{
+    width: 120px;
+    height: 120px;
+}
+.settings-title
+{
+    border-bottom: 1px solid rgb(159, 155, 155);
+
+}
+
+.settings p , .settings label , .settings input
+{
+    font-size: 14px;
+}
+.settings-row
+{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+}
+.settings-col-1
+{
+    flex-basis: 30%;
+}
+.settings-col-2
+{
+    flex-basis: 70%;
+}
+
+
+.settings-image , .settings-password , .settings-edit-profile
+{
+    box-shadow: 5px 3px 15px -3px rgba(0, 0, 0, 0.25);
+    width: 100%;
+
+}
+
+.settings input
+{
+    height: 30px;
+}
+
+.settings-image button , .settings-password button , .settings-edit-profile button , .settings span
+{
+    font-size: 13px;
+    height: 30px;
+
+}
+
+.settings img
+{
+    border: 0.5px solid #000;
+}
+
+.edit-profile , .edit-address
+{
+    gap: 20px;
+}
+#togglePassword
+{
+    font-size: 10px;
+}
+
+
+/* ACCOUNT SETTINGS */
+
+@media(max-width: 1258px)
+{
+    .settings-col-1
+    {
+        flex-basis: 50%;
+    }
+    .settings-col-2
+    {
+        flex-basis: 50%;
+    }   
+}
+
+@media(max-width: 1050px)
+{
+    .settings-row
+    {
+        flex-direction: column;
+    }
+    .settings-col-1
+    {
+        flex-basis: 100%;
+    }
+    .settings-col-2
+    {
+        flex-basis: 100%;
+    }   
+}
+
+@media (max-width:805px) {
+
+
+    .settings .settings-col-1 img
+    {
+        width: 90px;
+        height: 90px;
+    }
+    .settings  .settings-col-1 p ,
+    .settings  .settings-col-1 button ,
+    .settings .settings-password .input-group input,
+    .settings .settings-col-2 p,
+    .settings .settings-col-2 label,
+    .settings .settings-col-2 input ,
+    .settings .settings-col-2 textarea,
+    .settings .settings-col-2 button
+    {
+        font-size: 11px;
+    }
+
+    .settings .title
+    {
+        font-size: 14px;
+    }
+
+    .rental-top .buttons,
+    .rental-top .statuses span
+    {
+
+        font-size: 10px;
+    }
+
+
+}
+
+@media(max-width: 635px)
+{
+    .edit-profile , .edit-address
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}

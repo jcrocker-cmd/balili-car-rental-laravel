@@ -1,0 +1,34 @@
+name: Deploy Laravel Application
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Ubuntu Server
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.UBUNTU_SERVER_IP }} # Update this to your server's IP
+          username: ${{ secrets.UBUNTU_SERVER_SSH_USERNAME }} # Update this to your server's SSH username
+          password: ${{ secrets.UBUNTU_SERVER_SSH_PASSWORD }} # Update this to your server's SSH password
+          script: |
+            cd /var/www/mywebsite.com/ajab-car-rental
+            # Pull the latest changes from the repository
+            git pull origin main
+            # Build the Docker image directly on the server
+            docker build -t johnnote/ajab-car-rental:latest .
+            # Stop and remove the existing container
+            docker-compose down
+            # Start the new container
+            docker-compose up -d
+            # Run migrations and any other necessary commands
+            docker exec -it ajab-car-rental php artisan migrate --force
+            docker exec -it ajab-car-rental php artisan key:generate
