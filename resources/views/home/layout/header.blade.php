@@ -2,7 +2,7 @@
 <header id="header">
      <nav>
      <div class="header-col-1 ">
-        <a href="/" class="brand"><img src="images/LOGO.webp" class="logo"></a>
+        <a href="/" class="brand"><img src="images/LOGO.webp" alt="logo" class="logo"></a>
        
                 
     </div>
@@ -13,7 +13,6 @@
                 <li> <a href="#" id="scroll-up-2">Home</a></li>
                 <li> <a href=".featured-section">Features</a></li>
                 <li> <a href=".howitworks">How it Works</a></li>
-                <!-- <li> <a href="">About</a></li> -->
                 <li> <a href=".contact-us">Contact Us</a></li>
                 <a href="/home" class="bg-primary px-2 py-2 text-white view-rental-btn">View Rental Cars</a>
     </div>
