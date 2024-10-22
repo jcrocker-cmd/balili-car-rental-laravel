@@ -21,7 +21,7 @@
                     <div class="car-col-2">
 
                         <div class="d-flex" style="gap: 10px;">
-                            <h5 class="brand"><strong>{{ $item->brand}} {{ $item->model}} {{ $item->year}}</strong></h5> 
+                            <h5 class="brand"><strong>{{ $item->brand}} {{ $item->model}}</strong></h5> 
                             <p class="transmission">{{ $item->transmission}}</p>
                         </div>
 
