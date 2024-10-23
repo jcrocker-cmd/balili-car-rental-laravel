@@ -34,7 +34,7 @@ class EmailRequestController extends Controller
         $inquiry->save();
 
         Mail::send('home.email-template', $data, function($message) use ($data) {
-          $message->to('johnchristian.narbaja@bisu.edu.ph');
+          $message->to('narbajajc@gmail.com');
           $message->subject($data['subject']);
         });
 

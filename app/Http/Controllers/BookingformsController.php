@@ -73,38 +73,20 @@ class BookingformsController extends Controller
 
 
     $car_details = AddCar::where('slug', $slug)->first();
-
-    // Get the file data
-    $front_license = $request->file('front_license');
-    $back_license = $request->file('back_license');
-
-    // Get the original file names
-    $front_license_name = $front_license->getClientOriginalName();
-    $back_license_name = $back_license->getClientOriginalName();
             
         $data = [
             'name' => $request->name,
             'con_num' => $request->con_num,
             'address' => $request->address,
             'con_email' => $request->con_email,
-    
-            'front_license' => $front_license_name,
-            'back_license' => $back_license_name,
-    
             'mode_del' => $request->mode_del,
-    
             'payment' => $request->payment,
-    
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
             'return_time' => $request->return_time,
-            
             'total_amount_payable' => $request->total_amount_payable,
-
-    
             'msg' => $request->msg,
-    
             'car_details' => $car_details,
         ];
     
@@ -121,10 +103,6 @@ class BookingformsController extends Controller
         $booking->con_num = $data['con_num'];
         $booking->address = $data['address'];
         $booking->con_email = $data['con_email'];
-    
-        $booking->front_license = $data['front_license'];
-        $booking->back_license  = $data['back_license'];
-    
         $booking->mode_del = $data['mode_del'];
         $booking->payment = $data['payment'];
         $booking->start_date = $data['start_date'];
@@ -137,19 +115,6 @@ class BookingformsController extends Controller
         $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
         $booking->form_type = 'Daily Booking Form';
-    
-        if ($front_license) {
-            $front_license_name = time() . '_' . $front_license->getClientOriginalName();
-            $front_license->move('images/license/front/', $front_license_name);
-            $booking->front_license = $front_license_name;
-        }
-    
-        if ($back_license) {
-            $back_license_name = time() . '_' . $back_license->getClientOriginalName();
-            $back_license->move('images/license/back/', $back_license_name);
-            $booking->back_license = $back_license_name;
-        }
-    
         $booking->save();
 
         // Create custom notification
@@ -166,12 +131,9 @@ class BookingformsController extends Controller
         $car->save();
     
         // Send email notification
-        Mail::send('main.daily-email-template', ['data' => $data], function($message) use ($data,$front_license_name, $back_license_name) {
-            $message->to('johnchristian.narbaja@bisu.edu.ph');
-            $message->subject('Daily Booking Form');
-            $message->attach('images/license/front/' . $front_license_name, ['as' => $front_license_name]);
-            $message->attach('images/license/back/' . $back_license_name, ['as' => $back_license_name]);
-        
+        Mail::send('main.daily-email-template', ['data' => $data], function($message) use ($data) {
+            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
+            $message->subject('Daily Booking Form');  
         });
 
 
@@ -186,38 +148,20 @@ class BookingformsController extends Controller
 
 
     $car_details = AddCar::where('slug', $slug)->first();
-
-    // Get the file data
-    $front_license = $request->file('front_license');
-    $back_license = $request->file('back_license');
-
-    // Get the original file names
-    $front_license_name = $front_license->getClientOriginalName();
-    $back_license_name = $back_license->getClientOriginalName();
             
         $data = [
             'name' => $request->name,
             'con_num' => $request->con_num,
             'address' => $request->address,
             'con_email' => $request->con_email,
-    
-            'front_license' => $front_license_name,
-            'back_license' => $back_license_name,
-    
             'mode_del' => $request->mode_del,
-    
             'payment' => $request->payment,
-    
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
             'return_time' => $request->return_time,
-            
             'total_amount_payable' => $request->total_amount_payable,
-
-    
             'msg' => $request->msg,
-    
             'car_details' => $car_details,
         ];
     
@@ -234,10 +178,6 @@ class BookingformsController extends Controller
         $booking->con_num = $data['con_num'];
         $booking->address = $data['address'];
         $booking->con_email = $data['con_email'];
-    
-        $booking->front_license = $data['front_license'];
-        $booking->back_license  = $data['back_license'];
-    
         $booking->mode_del = $data['mode_del'];
         $booking->payment = $data['payment'];
         $booking->start_date = $data['start_date'];
@@ -249,22 +189,7 @@ class BookingformsController extends Controller
         $booking->car_id = $data['car_id'];
         $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
-        $booking->form_type = 'Weekly Booking Form';
-
-    
-        if ($front_license) {
-            $front_license_name = time() . '_' . $front_license->getClientOriginalName();
-            $front_license->move('images/license/front/', $front_license_name);
-            $booking->front_license = $front_license_name;
-        }
-    
-        if ($back_license) {
-            $back_license_name = time() . '_' . $back_license->getClientOriginalName();
-            $back_license->move('images/license/back/', $back_license_name);
-            $booking->back_license = $back_license_name;
-        }
-    
-        
+        $booking->form_type = 'Weekly Booking Form';  
         $booking->save();
 
         // Create custom notification
@@ -281,11 +206,9 @@ class BookingformsController extends Controller
         $car->save();
     
         // Send email notification
-        Mail::send('main.weekly-email-template', ['data' => $data], function($message) use ($data,$front_license_name, $back_license_name) {
-            $message->to('johnchristian.narbaja@bisu.edu.ph');
+        Mail::send('main.weekly-email-template', ['data' => $data], function($message) use ($data) {
+            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
             $message->subject('Weekly Booking Form');
-            $message->attach('images/license/front/' . $front_license_name, ['as' => $front_license_name]);
-            $message->attach('images/license/back/' . $back_license_name, ['as' => $back_license_name]);
         
         });
 
@@ -301,38 +224,20 @@ class BookingformsController extends Controller
 
 
     $car_details = AddCar::where('slug', $slug)->first();
-
-    // Get the file data
-    $front_license = $request->file('front_license');
-    $back_license = $request->file('back_license');
-
-    // Get the original file names
-    $front_license_name = $front_license->getClientOriginalName();
-    $back_license_name = $back_license->getClientOriginalName();
-            
+   
         $data = [
             'name' => $request->name,
             'con_num' => $request->con_num,
             'address' => $request->address,
             'con_email' => $request->con_email,
-    
-            'front_license' => $front_license_name,
-            'back_license' => $back_license_name,
-    
             'mode_del' => $request->mode_del,
-    
             'payment' => $request->payment,
-    
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
             'return_time' => $request->return_time,
-            
             'total_amount_payable' => $request->total_amount_payable,
-
-    
             'msg' => $request->msg,
-    
             'car_details' => $car_details,
         ];
     
@@ -349,10 +254,6 @@ class BookingformsController extends Controller
         $booking->con_num = $data['con_num'];
         $booking->address = $data['address'];
         $booking->con_email = $data['con_email'];
-    
-        $booking->front_license = $data['front_license'];
-        $booking->back_license  = $data['back_license'];
-    
         $booking->mode_del = $data['mode_del'];
         $booking->payment = $data['payment'];
         $booking->start_date = $data['start_date'];
@@ -365,21 +266,6 @@ class BookingformsController extends Controller
         $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
         $booking->form_type = 'Monthly Booking Form';
-
-    
-        if ($front_license) {
-            $front_license_name = time() . '_' . $front_license->getClientOriginalName();
-            $front_license->move('images/license/front/', $front_license_name);
-            $booking->front_license = $front_license_name;
-        }
-    
-        if ($back_license) {
-            $back_license_name = time() . '_' . $back_license->getClientOriginalName();
-            $back_license->move('images/license/back/', $back_license_name);
-            $booking->back_license = $back_license_name;
-        }
-
-
         $booking->save();
 
         // Create custom notification
@@ -396,12 +282,9 @@ class BookingformsController extends Controller
         $car->save();
     
         // Send email notification
-        Mail::send('main.monthly-email-template', ['data' => $data], function($message) use ($data,$front_license_name, $back_license_name) {
-            $message->to('johnchristian.narbaja@bisu.edu.ph');
+        Mail::send('main.monthly-email-template', ['data' => $data], function($message) use ($data) {
+            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
             $message->subject('Monthly Booking Form');
-            $message->attach('images/license/front/' . $front_license_name, ['as' => $front_license_name]);
-            $message->attach('images/license/back/' . $back_license_name, ['as' => $back_license_name]);
-        
         });
 
 

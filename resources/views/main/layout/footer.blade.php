@@ -7,12 +7,12 @@
         
         <div class="footer-col">
             <h3>OFFICE<div class="under-line"><span></span></div></h3>
-            <p>Sitio Plaza Nivel Hills <br>
-            Back of Marcopolo Residences,<br>
-            Towe 3, Apas, Cebu City, 6000 Cebu
+            <p>Behind Tower 4 <br>
+                Marco Polo Residences<br>
+                Nivel Hills, Lahug, Cebu City
             </p>
-            <p class="email-id">narbajajcgmail.com</p>
-            <p >+63 912 772 5518</p>
+            <p class="email-id">marzbalskie@gmail.com</p>
+            <p>WhatsApp (+639771763187)</p>
         </div>
 
         <div class="footer-col">
@@ -45,6 +45,6 @@
     </div>
     <hr class="footer-hr">
     <p class="copyright">
-        AJAB Transport Services 2023 - All Rights Reserved
+        Balili Car Rental 2023 - All Rights Reserved
     </p>
 </footer>
