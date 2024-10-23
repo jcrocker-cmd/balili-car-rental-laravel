@@ -71,7 +71,7 @@
 
                         <div style="width: 100%;" class="pb-3">
                             <label class="form-label">Contact Email</label>
-                            <input type="email" class="form-control" id="email" name="con_email" placeholder="Enter Email" value="{{ Auth::user()->email }} " onkeyup="javascript:capitalize(this);" required>
+                            <input type="email" class="form-control" id="email" name="con_email" placeholder="Enter Email" onkeyup="javascript:capitalize(this);" required>
                             <!-- <span class="text-danger" id="erroremail">@error('con_email') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
                                 Enter valid contact email.
