@@ -7,10 +7,12 @@
         
         <div class="footer-col">
             <h3>OFFICE<div class="under-line"><span></span></div></h3>
-            <p>Sitio Plaza Nivel Hills <br>
-            Back of Marcopolo Residences,<br>
-            Towe 3, Apas, Cebu City, 6000 Cebu
+            <p>Behind Tower 4 <br>
+                Marco Polo Residences<br>
+                Nivel Hills, Lahug, Cebu City
             </p>
+            <p class="email-id">marzbalskie@gmail.com</p>
+            <p>WhatsApp (+639771763187)</p>
         </div>
 
         <div class="footer-col">
@@ -19,7 +21,6 @@
             <li><a href="#">Home</a></li>
             <li><a href=".howitworks">How It Works</a></li>
             <li><a href=".featured-section">Features</a></li>
-            <!-- <li><a href="">About</a></li> -->
             <li><a href=".contact-us">Contact Us</a></li>
             <li><a href="home">View Rental Cars</a></li>
            

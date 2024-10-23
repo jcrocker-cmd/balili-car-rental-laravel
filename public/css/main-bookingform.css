@@ -102,6 +102,13 @@
     font-size: 14px;
 }
 
+/* Force the intl-tel-input to take 100% width */
+.iti {
+    width: 100% !important; /* Make the intl-tel-input container 100% */
+}
+
+
+
 .booking-form-section .sect-1 h4 ,
 .booking-form-section .requirements h5 ,
 .mode_del h5 ,

@@ -16,8 +16,7 @@
         </div>
 
         <div class="links">
-            <span>View your bookings?</span>
-            <a href="/my_bookings">My Bookings</a>
+            <a href="/home">View Rentals</a>
         </div>
     </main>
 

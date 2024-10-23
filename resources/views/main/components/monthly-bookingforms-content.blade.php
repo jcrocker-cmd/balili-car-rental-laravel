@@ -16,7 +16,7 @@
     </div>
 
     <section class="">
-    <form enctype="multipart/form-data" action="{{ url('monthly_bookingformsubmit', ['slug' => $car_details->slug]) }}" method="POST" id="weekly_bookingForm" class="was-validated">
+    <form enctype="multipart/form-data" action="{{ url('monthly_bookingformsubmit', ['slug' => $car_details->slug]) }}" method="POST" id="monthly_bookingForm" class="was-validated" onsubmit="setPhoneData()">
                   @csrf
 
         <div class="booking-info-section">
@@ -40,14 +40,21 @@
                             </div>
                         </div>
 
-                        <div style="width: 100%;">
-                            <label class="form-label">Contact Number</label>
-                            <input type="number" id="number" class="form-control" name="con_num" placeholder="Enter phone no." value="" onkeyup="javascript:capitalize(this);" required>
-                            <!-- <span class="text-danger" id="errornum">@error('con_num') {{$message}} @enderror</span> -->
+                        <div class="intl-tel-input" style="width: 100%;">
+                            <label class="form-label">WhatsApp/Viber Number</label>
+                            
+                            <!-- Country Code & Phone Input -->
+                            <input type="tel" id="whatsapp_viberNumber" class="form-control" placeholder="WhatsApp or Viber number" required>
+
                             <div class="invalid-feedback">
-                                Enter your contact No.
+                                Enter a WhatsApp/Viber number.
                             </div>
                         </div>
+
+                        <!-- Hidden fields to store extracted data -->
+                        <input type="hidden" id="countryCode" name="country_code" autocomplete="off">
+                        <input type="hidden" id="fullPhoneNumber" name="con_num" autocomplete="off">
+
 
                     </div>
 
@@ -76,21 +83,8 @@
                     <div style="margin-bottom: 25px;" class="requirements">
                         <h5 style="color: #005281"><strong>Requirements</strong></h5> 
                         <hr class="bg-dark">
-                        <h6>1. Driver's license</h6>
 
-                        <div class="license-wrapper pb-2">
-                            <div class="license ">
-                                <label class="form-check-label d-flex align-items-center" for="front-license">Front Side<strong class="pic-limit">(1mb limit)</strong></label>
-                                <input type="file" name="front_license" id="front_license" accept="image/jpeg, image/png" size="1000000">
-                                <span class="error" id="errorfront"></span>
-                            </div>
-
-                            <div class="license ">
-                                <label class="form-check-label d-flex align-items-center" for="back-license" >Back Side <strong class="pic-limit">(1mb limit)</strong></label>
-                                <input type="file" name="back_license" id="back_license" accept="image/jpeg, image/png" size="1000000">
-                                <span class="error" id="errorback"></span>
-                            </div>
-                        </div>
+                        <h6>1. Driver's license<strong class="pic-limit">(provide your driver's license upon meet-up.)</strong></h6>
 
                         <h6>2. Pay before drive</h6>
                         

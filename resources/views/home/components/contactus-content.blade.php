@@ -55,11 +55,10 @@
             <div class="contact-box">
                 <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
                 <div class="text">
-                    <h4>Address</h4>
-                    <p>Lot 9 Blk 6 Windfields Subdivision <br>
-                        Danglag, Consolacion City, Cebu<br>
-                        Philippines, 6001
-                    </p>
+                <p>Behind Tower 4 <br>
+                Marco Polo Residences<br>
+                 Nivel Hills, Lahug, Cebu City
+                </p>
                 </div>
             </div>
 

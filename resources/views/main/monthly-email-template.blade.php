@@ -6,7 +6,7 @@
             text-align: left;
 
             ">
-    <img src="http://localhost:8000/images/LOGO.png" width="200px" alt="" srcset="">
+    <img src="http://localhost:80/images/LOGO.png" width="200px" alt="" srcset="">
     
     <h5 style="font-size: 30px;
                 margin: 0;
@@ -48,7 +48,7 @@
         <td style="padding: 10px;">{!! $data['con_email'] !!}</td>
       </tr>
       <tr>
-        <td style="padding: 10px;">Contact Phone</td>
+        <td style="padding: 10px;">Whatsapp/Viber</td>
         <td style="padding: 10px;">{!! $data['con_num'] !!}</td>
       </tr>
       <tr>
@@ -148,7 +148,7 @@
       </tr>
       <tr>
         <td style="padding: 10px;">Total Amount Payable</td>
-        <td style="padding: 10px;">{!! $data['total_amount_payable'] !!}</td>
+        <td style="padding: 10px;">₱ {!! $data['total_amount_payable'] !!}</td>
       </tr>
     </tbody>
 
