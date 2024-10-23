@@ -33,7 +33,7 @@
 
                         <div style="width: 100%;">
                             <label class="form-label">Full Name</label>
-                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz" value="{{ Auth::user()->first_name }} {{ Auth::user()->middle_name }} {{ Auth::user()->last_name }} " onkeyup="javascript:capitalize(this);" pattern=".{8,}" required>
+                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz"  onkeyup="javascript:capitalize(this);" pattern=".{8,}" required>
                             <!-- <span class="text-danger" id="errorname">@error('name') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
                                 Enter Name (min:8)
