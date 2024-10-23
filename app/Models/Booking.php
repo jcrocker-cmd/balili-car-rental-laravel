@@ -22,8 +22,6 @@ class Booking extends Model
         'address',
         'con_email',
         'mode_del',
-        'front_license',
-        'back_license',
         'payment',
         'start_date',
         'start_time',

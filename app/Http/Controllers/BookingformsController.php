@@ -71,7 +71,6 @@ class BookingformsController extends Controller
     public function booking_submit(Request $request, $slug)
     {
 
-
     $car_details = AddCar::where('slug', $slug)->first();
             
         $data = [
@@ -91,11 +90,6 @@ class BookingformsController extends Controller
         ];
     
         $data['car_id'] = $car_details->id;
-    
-
-        // Get the authenticated user's ID
-        $user_id = Auth::id();
-        $data['user_id'] = $user_id;
     
         // Save data to database
         $booking = new Booking;
@@ -167,11 +161,6 @@ class BookingformsController extends Controller
     
         $data['car_id'] = $car_details->id;
     
-
-        // Get the authenticated user's ID
-        $user_id = Auth::id();
-        $data['user_id'] = $user_id;
-    
         // Save data to database
         $booking = new Booking;
         $booking->name = $data['name'];
@@ -242,11 +231,6 @@ class BookingformsController extends Controller
         ];
     
         $data['car_id'] = $car_details->id;
-    
-
-        // Get the authenticated user's ID
-        $user_id = Auth::id();
-        $data['user_id'] = $user_id;
     
         // Save data to database
         $booking = new Booking;
