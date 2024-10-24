@@ -106,14 +106,12 @@ class BookingformsController extends Controller
         $booking->total_amount_payable = $data['total_amount_payable'];
         $booking->msg = $data['msg'];
         $booking->car_id = $data['car_id'];
-        $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
         $booking->form_type = 'Daily Booking Form';
         $booking->save();
 
         // Create custom notification
         $notification = new Admin_Notification();
-        $notification->user_id = $data['user_id'];
         $notification->car_id = $data['car_id'];
         $notification->booking_id = $booking->id;
         $notification->message = 'Car has been booked';
@@ -176,14 +174,12 @@ class BookingformsController extends Controller
         $booking->total_amount_payable = $data['total_amount_payable'];
         $booking->msg = $data['msg'];
         $booking->car_id = $data['car_id'];
-        $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
         $booking->form_type = 'Weekly Booking Form';  
         $booking->save();
 
         // Create custom notification
         $notification = new Admin_Notification();
-        $notification->user_id = $data['user_id'];
         $notification->car_id = $data['car_id'];
         $notification->booking_id = $booking->id;
         $notification->message = 'Car has been booked';
@@ -247,14 +243,12 @@ class BookingformsController extends Controller
         $booking->total_amount_payable = $data['total_amount_payable'];
         $booking->msg = $data['msg'];
         $booking->car_id = $data['car_id'];
-        $booking->user_id = $data['user_id'];
         $booking->status = 'In progress';
         $booking->form_type = 'Monthly Booking Form';
         $booking->save();
 
         // Create custom notification
         $notification = new Admin_Notification();
-        $notification->user_id = $data['user_id'];
         $notification->car_id = $data['car_id'];
         $notification->booking_id = $booking->id;
         $notification->message = 'Car has been booked';
