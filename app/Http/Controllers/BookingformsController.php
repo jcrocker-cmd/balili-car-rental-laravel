@@ -124,7 +124,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.daily-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
+            $message->to('marzbalskie@gmail.com');
             $message->subject('Daily Booking Form');  
         });
 
@@ -192,7 +192,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.weekly-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
+            $message->to('marzbalskie@gmail.com');
             $message->subject('Weekly Booking Form');
         
         });
@@ -261,7 +261,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.monthly-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('narbajajc@gmail.com','marzbalskie@gmail.com');
+            $message->to('marzbalskie@gmail.com');
             $message->subject('Monthly Booking Form');
         });
 
