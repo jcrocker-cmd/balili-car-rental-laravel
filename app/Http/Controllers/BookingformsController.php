@@ -126,7 +126,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.daily-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('narbajajc@gmail.com');
+            $message->to('marzbalskie@gmail.com');
             $message->cc($data['con_email']);
             $message->subject('Daily Booking Form');  
         });
