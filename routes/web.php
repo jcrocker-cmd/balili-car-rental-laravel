@@ -35,6 +35,22 @@ Route::get('/dd', function () {
 });
 
 
+Route::get('/test-whatsapp', function () {
+    $data = [
+        'name' => 'Test User',
+        'car_details' => (object) ['name' => 'Toyota Corolla'],
+        'start_date' => '2024-10-24',
+        'start_time' => '10:00 AM',
+        'return_date' => '2024-10-30',
+        'return_time' => '10:00 AM',
+        'total_amount_payable' => '100.00',
+    ];
+
+    $whatsappNumber = 'whatsapp:+639463588376'; // Replace with actual number
+    (new BookingformsController)->sendWhatsAppMessage($whatsappNumber, $data);
+});
+
+
 
 
 // Dashboard Routes

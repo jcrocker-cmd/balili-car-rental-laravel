@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title')</title>
+
+    <!-- Meta Description for SEO -->
+    <meta name="description" content="Balili Cebu Car Car Rental offers a wide selection of affordable and reliable cars for rent. Book your ride today and enjoy a seamless experience.">
+
+    <!-- Meta Keywords (Optional) -->
+    <meta name="keywords" content="car rental, cebu car rental, affordable car rental, car rental Bohol, Balili car rental, rent a car">
+
     <link rel="shortcut icon" href="images/tire.png" type="image/x-icon">
     @yield('styles')
 </head>

@@ -22,13 +22,8 @@ class AddCarController extends Controller
 
     public function main_allcars()
     {
-        $user_id = Auth::id();
-    
-        $notificationsUnread = Client_Notification::where('user_id', $user_id)
-            ->whereNull('read_at')
-            ->get();
         $addcar = AddCar::all();
-        return view ('main.homepage',compact('addcar','notificationsUnread'));
+        return view ('main.homepage',compact('addcar'));
     }
 
     public function main_van()

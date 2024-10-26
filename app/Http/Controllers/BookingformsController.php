@@ -16,6 +16,8 @@ use Mail;
 use Session;
 use DB;
 use Auth;
+use Illuminate\Support\Facades\Log;
+use Twilio\Rest\Client;
 use App\Notifications\BookingNotification;
 use Illuminate\Support\Facades\Notification;
 
@@ -124,7 +126,8 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.daily-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('marzbalskie@gmail.com');
+            $message->to('narbajajc@gmail.com');
+            $message->cc($data['con_email']);
             $message->subject('Daily Booking Form');  
         });
 
@@ -193,6 +196,7 @@ class BookingformsController extends Controller
         // Send email notification
         Mail::send('main.weekly-email-template', ['data' => $data], function($message) use ($data) {
             $message->to('marzbalskie@gmail.com');
+            $message->cc($data['con_email']);
             $message->subject('Weekly Booking Form');
         
         });
@@ -262,6 +266,7 @@ class BookingformsController extends Controller
         // Send email notification
         Mail::send('main.monthly-email-template', ['data' => $data], function($message) use ($data) {
             $message->to('marzbalskie@gmail.com');
+            $message->cc($data['con_email']);
             $message->subject('Monthly Booking Form');
         });
 
@@ -272,7 +277,39 @@ class BookingformsController extends Controller
     }
 
 
-
+    public function sendWhatsAppMessage($whatsappNumber, $data)
+    {
+        $sid = env('TWILIO_SID');
+        $token = env('TWILIO_AUTH_TOKEN');
+    
+        // Debugging: Check if SID and Token are being loaded
+        if (empty($sid) || empty($token)) {
+            \Log::error('Twilio SID or Token not set in .env');
+            return; // Exit the method if SID or Token is not set
+        }
+    
+        $twilio = new Client($sid, $token);
+    
+        $messageBody = "Hi {$data['name']},\n"
+            . "Your booking details are as follows:\n"
+            . "Car: {$data['car_details']->name}\n"
+            . "Pickup: {$data['start_date']} at {$data['start_time']}\n"
+            . "Return: {$data['return_date']} at {$data['return_time']}\n"
+            . "Total: {$data['total_amount_payable']}";
+    
+        try {
+            $twilio->messages->create(
+                "whatsapp:" . $whatsappNumber,
+                [
+                    'from' => env('TWILIO_WHATSAPP_NUMBER'),
+                    'body' => $messageBody
+                ]
+            );
+        } catch (\Exception $e) {
+            \Log::error('Twilio WhatsApp Message Error: ' . $e->getMessage());
+            // Optionally, return a response or throw an error
+        }
+    }
 
 
     public function confirmBooking($id)

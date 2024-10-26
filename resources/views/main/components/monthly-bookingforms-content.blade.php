@@ -16,7 +16,7 @@
     </div>
 
     <section class="">
-    <form enctype="multipart/form-data" action="{{ url('monthly_bookingformsubmit', ['slug' => $car_details->slug]) }}" method="POST" id="monthly_bookingForm" class="was-validated" onsubmit="setPhoneData()">
+    <form enctype="multipart/form-data" action="{{ url('monthly_bookingformsubmit', ['slug' => $car_details->slug]) }}" method="POST" id="monthly_bookingForm" class="was-validated">
                   @csrf
 
         <div class="booking-info-section">
@@ -44,7 +44,7 @@
                             <label class="form-label">WhatsApp/Viber Number</label>
                             
                             <!-- Country Code & Phone Input -->
-                            <input type="tel" id="whatsapp_viberNumber" class="form-control" placeholder="WhatsApp or Viber number" required>
+                            <input type="tel" id="whatsapp_viberNumber" class="form-control" placeholder="WhatsApp or Viber number" oninput="setPhoneData()" required>
 
                             <div class="invalid-feedback">
                                 Enter a WhatsApp/Viber number.

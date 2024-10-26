@@ -59,15 +59,27 @@
         const iti = window.intlTelInputGlobals.getInstance(input);
         const countryData = iti.getSelectedCountryData();
 
-        // Get the phone number and country code
-        const phoneNumber = input.value;
+        // Get the country code
         const countryCode = countryData.dialCode;
 
-        // Set the values of the hidden fields
+        // Get the raw phone number entered by the user
+        const rawPhoneNumber = input.value;
+
+        // Set the country code in the hidden input
         document.querySelector("#countryCode").value = countryCode;
-        
-        // Combine country code and phone number for the full phone number
-        document.querySelector("#fullPhoneNumber").value = `+${countryCode}${phoneNumber}`;
+
+        // Prepare the full phone number for the hidden field
+        const fullPhoneNumber = `+${countryCode}${rawPhoneNumber.replace(/^\+/, '')}`; // Remove existing "+" if present
+        document.querySelector("#fullPhoneNumber").value = fullPhoneNumber;
+
+        // Handle input field display
+        if (rawPhoneNumber.length === 0) {
+            // If input is empty, set input to placeholder (optional)
+            input.value = ""; // Keep it empty
+        } else {
+            // If there's any input, retain user input
+            input.value = rawPhoneNumber; // Keep user input intact
+        }
     }
   
     </script>   
