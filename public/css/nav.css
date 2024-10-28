@@ -36,6 +36,11 @@ nav{
     /* width: 500px; */
 }
 
+.header-col-middle
+{
+    display: flex;
+}
+
 .header-col-middle ul{
     display: flex;
     gap: 30px;
