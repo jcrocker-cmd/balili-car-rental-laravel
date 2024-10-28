@@ -10,13 +10,11 @@
     
 
     <div class="header-col-middle">
-      <ul>
-          <li><a href="#" id="scroll-up-2">Home</a></li>
-          <li><a href=".featured-section">Features</a></li>
-          <li><a href=".howitworks">How it Works</a></li>
-          <li><a href=".contact-us">Contact Us</a></li>
-          <li><a href="/home" class="bg-primary px-2 py-2 text-white view-rental-btn">View Rental Cars</a></li>
-      </ul>
+          <div><a href="#" id="scroll-up-2">Home</a></div>
+          <div><a href=".featured-section">Features</a></div>
+          <div><a href=".howitworks">How it Works</a></div>
+          <div><a href=".contact-us">Contact Us</a></div>
+          <div><a href="/home" class="bg-primary px-2 py-2 text-white view-rental-btn">View Rental Cars</a></div>
     </div>
 
 
