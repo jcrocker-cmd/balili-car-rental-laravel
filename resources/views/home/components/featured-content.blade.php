@@ -9,7 +9,7 @@
 
         <div class="featured-row-1">
             <div class="featured-col-1">
-                <img src="/images/mirage.png" alt="Image of Mitsubishi Mirage G4">
+                <img src="/images/mirage.png" alt="Image of Mitsubishi Mirage G4" loading="lazy">
             </div>
             <div class="featured-col-2">
                 <div class="car-title-wrapper">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="featured-col-2">
-                <img src="/images/sedan.webp" alt="Image of Toyota Vios sedan">
+                <img src="/images/sedan.webp" alt="Image of Toyota Vios sedan" loading="lazy">
             </div>
         </div>
 

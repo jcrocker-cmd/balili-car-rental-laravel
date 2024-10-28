@@ -38,6 +38,7 @@
 
 @yield('script')
 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 <script>
 $(window).on("load",function(){
     $(".loader-wrapper").delay(500).fadeIn("slow").fadeOut("slow");
