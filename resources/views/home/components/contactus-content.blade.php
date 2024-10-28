@@ -66,8 +66,8 @@
             <div class="contact-box">
                 <div class="icon"><i class="fas fa-phone-alt"></i></div>
                 <div class="text">
-                    <h4>Phone</h4>
-                    <p>09127725518</p>
+                    <h4>WhatsApp</h4>
+                    <p>+639771763187</p>
                 </div>
             </div>
 
@@ -75,7 +75,7 @@
                 <div class="icon"><i class="fas fa-envelope"></i></div>
                 <div class="text">
                     <h4>Email</h4>
-                    <p>narbajajc@gmail.com</p>
+                    <p>marzbalskie@gmail.com</p>
                 </div>
             </div>
 

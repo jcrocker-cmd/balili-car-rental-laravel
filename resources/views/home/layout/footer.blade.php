@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-row">
         <div class="footer-col">
-            <img src="/images/LOGOxwhitefooter.webp" alt="Youdrive" class="footer-logo">
+            <img src="/images/LOGOxwhitefooter.webp" alt="logo" class="footer-logo">
             <p class="pr-4">Balili Car Rental is an organization established to cater the peoples’ need to use a vehicle. With cars of different seaters, color, and sizes, this organization aim to let people rent a car in the meantime.</p>
         </div>
         
