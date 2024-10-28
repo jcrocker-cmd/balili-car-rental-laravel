@@ -16,7 +16,7 @@
 
     <div class="header-col-2">
         <div>
-            <a href="#" id="mainside-bar" class="sidebar-toggle"><i class="fas fa-bars"></i></a>
+            <a href="#" id="mainside-bar" class="sidebar-toggle" aria-label="Open sidebar menu"><i class="fas fa-bars"></i></a>
         </div>
     </div>
 

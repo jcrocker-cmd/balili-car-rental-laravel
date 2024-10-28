@@ -13,13 +13,13 @@
             @csrf
                 <div class="contact-input-row">
                     <div class="contact-input-group">
-                        <label>Name</label>
+                        <label for="name">Name</label>
                         <input type="text" name="name" id="name" >
                         <span class="error-msg" id="error-name"></span>
                     </div>
 
                     <div class="contact-input-group">
-                        <label class="phone">Phone</label>
+                        <label for="phone" class="phone">Phone</label>
                         <input type="text" name="phone" id="phone" >
                         <span class="error-msg" id="error-phone"></span>
                     </div>
@@ -28,19 +28,19 @@
 
                 <div class="contact-input-row">
                     <div class="contact-input-group">
-                        <label>Email</label>
+                        <label for="email">Email</label>
                         <input type="email" name="email" id="email" >
                         <span class="error-msg" id="error-email"></span>
                     </div>
 
                     <div class="contact-input-group">
-                        <label class="subject">Subject</label>
+                        <label for="subject" class="subject">Subject</label>
                         <input type="text" name="subject" id="subject" oninput="this.value = this.value.toUpperCase()">
                         <span class="error-msg" id="error-subject"></span>
                     </div>
                 </div>
                         <div class="contactus-text">
-                        <label class="mb-3">Message</label>
+                        <label for="msg" class="mb-3">Message</label>
                         <textarea name="content" id="msg" rows="5" ></textarea>
                         <span class="error-msg" id="error-msg"></span>
                         </div>
