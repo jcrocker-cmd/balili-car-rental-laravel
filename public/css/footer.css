@@ -188,7 +188,7 @@ footer
         padding-left: 20px;
         padding-right: 20px;
         border-top-left-radius: 50px;
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .footer-logo
@@ -199,6 +199,6 @@ footer
 
     .footer-row h3
     {
-        font-size: 11px;
+        font-size: 12px;
     }
 }
