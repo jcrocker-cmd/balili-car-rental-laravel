@@ -32,7 +32,10 @@
     font-size: 20px;
 }
 
-
+.how-card h3
+{
+  font-size: 25px;
+}
 .how-container
 {
   position: relative;
@@ -130,7 +133,7 @@
 
 @media (max-width: 500px) {
   .how-title h2,
-  .how-card h4
+  .how-card h3
   {
       font-size: 12px;
   }

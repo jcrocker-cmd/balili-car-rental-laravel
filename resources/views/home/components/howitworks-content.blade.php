@@ -63,7 +63,7 @@
 <div class="how-card" id="howcard-1">
   <div class="circle">
     <div class="text-center text-white pb-3 card-logo"><i class="fas fa-user fa-3x"></i></div>
-    <div class="text-white"><h4>Enter Credentials</h4></div>
+    <div class="text-white"><h3>Enter Credentials</h3></div>
   </div>
   <div class="content">
     <p>To get started, simply enter your login credentials or create a new account to access our services and enjoy a seamless booking experience.</p>
@@ -74,7 +74,7 @@
 <div class="how-card" id="howcard-2">
   <div class="circle">
     <div class="text-center text-white pb-3 card-logo"><i class="fas fa-bookmark fa-3x"></i></div>
-    <div class="text-white"><h4>Book a Car</h4></div>
+    <div class="text-white"><h3>Book a Car</h3></div>
   </div>
   <div class="content">
     <p>Once you're logged in, browse through our available cars and select the one that suits your preferences.</p>
@@ -85,7 +85,7 @@
 <div class="how-card" id="howcard-3">
   <div class="circle">
     <div class="text-center text-white pb-3 card-logo"><i class="fas fa-check fa-3x"></i></div>
-    <div class="text-white"><h4>Confirmation </h4></div>
+    <div class="text-white"><h3>Confirmation </h3></div>
   </div>
   <div class="content">
     <p>After booking a car, The owner will then get in touch with you to discuss further details, and any other necessary arrangements.</p>
