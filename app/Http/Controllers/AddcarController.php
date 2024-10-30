@@ -272,13 +272,6 @@ class AddCarController extends Controller
     public function main_search_rental(Request $request)
     {
 
-        $user_id = Auth::id();
-    
-        $notificationsUnread = Client_Notification::where('user_id', $user_id)
-            ->whereNull('read_at')
-            ->get();
-
-
         // Get the search term from the request
         $searchTerm = $request->input('search');
 
@@ -295,7 +288,7 @@ class AddCarController extends Controller
 
 
         // Return the search results to the view
-        return view('main.search-car', compact('cars', 'searchTerm','notificationsUnread'));
+        return view('main.search-car', compact('cars', 'searchTerm'));
     }
 
     public function guest_search_rental(Request $request)

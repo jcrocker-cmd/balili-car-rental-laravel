@@ -16,7 +16,7 @@
         </div>
 
         <div class="links">
-            <a href="/home">View Rentals</a>
+            <a href="/home">Check you email for the Booking Details</a>
         </div>
     </main>
 

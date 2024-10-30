@@ -1,9 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@200;300;400;500;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+
 
 .all-cars-wrapper
 {
     width: 100%;
     margin-top: 140px;
+}
+.all-cars-section .header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 50px;
+
+}
+.all-cars-section h3
+{
+    font-family: 'Asap', sans-serif;
+    font-weight: 800;
+
+}
+
+.all-cars-section .lines
+{
+    width: 100px;
+    height: 3px;
+    background-color: black;
 }
 
 .all-cars-section
