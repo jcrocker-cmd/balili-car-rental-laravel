@@ -46,10 +46,6 @@
   <hr>
     <div class="car-links-container">
         <a href="home" class="car-links">All-Cars</a>
-        <a href="/van" class="car-links">Van</a>
         <a href="/sedan" class="car-links">Sedan</a>
-        <a href="/pickup" class="car-links">Pick-Up</a>
-        <a href="/7seaters" class="car-links">7-Seater</a>
-        <a href="/hatchback" class="car-links">Hatchback</a>
     </div>
 </div>

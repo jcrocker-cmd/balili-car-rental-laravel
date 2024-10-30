@@ -10,16 +10,20 @@
     @include('main.layout.header2-main')
 
     
-    <section class="all-cars-section">
-
-        <p class="category-title pb-4">Sedan</p>
+    <div class="all-cars-wrapper">
+    <div class="all-cars-section">
+            <div class="header">
+                <div class="lines"></div>
+                <div><h3>Sedan</h3></div>
+                <div class="lines"></div>
+            </div>
 
         <div class="all-cars-row">
 
 
-        <!-- CAR PRODUCT -->  
+        <!-- CAR PRODUCT -->
             @foreach($addcar as $item)
-                @if ($item->is_active == true && $item->vehicle == 'Sedan')
+                @if ($item->is_active == true)
                 <div class="car-wrapper">
                     <a href="/mainviewcar/{{ $item->slug }}" class="text-dark car-link" style="text-decoration: none;" title="View Car">
                 
@@ -33,19 +37,24 @@
                         <div class="car-col-2">
 
                             <div class="d-flex" style="gap: 10px;">
-                                <h5 class="brand"><strong>{{ $item->brand}} {{ $item->model}} {{ $item->year}}</strong></h5> 
+                                <h5 class="brand"><strong>{{ $item->brand}} {{ $item->model}}</strong></h5> 
                                 <p class="transmission">{{ $item->transmission}}</p>
                             </div>
 
                                 <p class="location">{{ $item->carlocation}}</p>
 
-                            <div class="d-flex align-items-center prices" style="gap: 10px;">
-                                <span><h6><sup>₱</sup> {{ number_format($item->weeklyrate) }} / Weekly</h6></span>
-                                <span><h5>|</h5></span>
-                                <span><h6><sup>₱</sup> {{ number_format($item->monthlyrate) }} / Monthly</h6></span>
+                            <div class="d-flex flex-column align-items-start prices" style="gap: 10px;">
+                                <span><h6>₱ {{ number_format($item->dailyrate) }} / Daily</h6></span>
+                                <span><h6>₱ {{ number_format($item->weeklyrate) }} / Weekly</h6></span>
+                                <span><h6>₱ {{ number_format($item->monthlyrate) }} / Monthly</h6></span>
                             </div>
 
-                            <h5 class="pt-1 dailyrate"><sup>₱</sup> {{ number_format($item->dailyrate) }} | Daily</h5>
+                            <div class="d-flex flex-column align-items-start mt-1" style="gap: 10px;">
+                                <span><h6><i class="fas fa-user" style="margin-right: 10px;"></i>{{ $item->seats }} Seaters</h6></span>
+                                <span><h6><i class="fas fa-gas-pump" style="margin-right: 10px;"></i>{{ $item->fuel }}</h6></span>
+                                <span><h6><i class="fas fa-fill" style="margin-right: 10px;"></i>{{ $item->color }}</h6></span>
+
+                            </div>
                     </a>
                             
                             <div class="carbuttons">
@@ -69,14 +78,10 @@
             
             @endforeach
 
-            @if ($addcar->where('is_active', true)->where('vehicle', 'Sedan')->count() == 0)
-                <span class="text-muted no-cars-available">No cars available</span>
-            @endif
-
-
 
         </div>
-</section>
+    </div>
+</div>
 
     @include('main.layout.footer')
 @endsection

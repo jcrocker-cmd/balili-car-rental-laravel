@@ -183,8 +183,8 @@ class CarSeeder extends Seeder
         // Mirage G4/Metallic Red/HAO664 2024
         $car = AddCar::create([
             'vehicle' => 'Sedan',
-            'brand' => 'Toyota',
-            'model' => 'Vios',
+            'brand' => 'Mitsubishi',
+            'model' => 'Mirage G4',
             'year' => '2024',
             'plate' => '',
             'seats' => '5',

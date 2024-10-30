@@ -1,7 +1,10 @@
 <div class="all-cars-wrapper">
     <div class="all-cars-section">
-
-        <p class="category-title pb-4">All Cars</p>
+            <div class="header">
+                <div class="lines"></div>
+                <div><h3>Car Rentals</h3></div>
+                <div class="lines"></div>
+            </div>
 
         <div class="all-cars-row">
 
