@@ -6,7 +6,7 @@
             text-align: left;
 
             ">
-    <img src="http://localhost:80/images/LOGO.png" width="200px" alt="" srcset="">
+    <img src="http://balilicarrental.johnnote-tech.site/images/LOGO.png" width="200px" alt="" srcset="">
     
     <h5 style="font-size: 30px;
                 margin: 0;
@@ -97,10 +97,6 @@
         <td style="padding: 10px;">Transmission</td>
         <td style="padding: 10px;">{!! $data['car_details']->transmission !!}</td>
       </tr>
-      <tr>
-        <td style="padding: 10px;">Plate No.</td>
-        <td style="padding: 10px;">{!! $data['car_details']->plate !!}</td>
-      </tr>
     </tbody>
 
     <thead class="table-info"  style="background: #003049; 
@@ -130,6 +126,10 @@
       <tr>
         <td style="padding: 10px;">Mode of Delivery</td>
         <td style="padding: 10px;">{!! $data['mode_del'] !!}</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Color</td>
+        <td style="padding: 10px;">{!! $data['car_details']->color !!}</td>
       </tr>
     </tbody>
 

@@ -21,7 +21,7 @@ class AddCar extends Model
         'seats',
         'fuel',
         'displacement',
-        'mileage',
+        'color',
         'carlocation',
         'transmission',
 

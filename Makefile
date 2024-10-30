@@ -30,6 +30,8 @@ keygen:
 	./vendor/bin/sail php artisan key:generate
 seed:
 	./vendor/bin/sail php artisan db:seed --class=PermissionSeeder && ./vendor/bin/sail php artisan db:seed --class=AdmininfoSeeder
+car:
+	./vendor/bin/sail php artisan db:seed --class=CarSeeder
 init:
 	make env
 	make up

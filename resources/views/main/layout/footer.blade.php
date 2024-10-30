@@ -37,8 +37,8 @@
             </form> -->
 
             <div class="social-icons">
-                <a href="https://web.facebook.com/AJABcarental" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://goo.gl/maps/8uig7REFPGVfxS4w7" aria-label="Find us on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100000787774311" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://g.co/kgs/QXdZtx1" aria-label="Find us on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
             </div>
         </div>
         
