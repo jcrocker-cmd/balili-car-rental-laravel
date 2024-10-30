@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('seats')->nullable();
             $table->string('fuel')->nullable();
             $table->string('displacement')->nullable();
-            $table->string('mileage')->nullable();
+            $table->string('color')->nullable();
             $table->string('carlocation')->nullable();
             $table->string('transmission')->nullable();
             $table->string('fname')->nullable();

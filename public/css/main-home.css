@@ -1,10 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap');
+
+.all-cars-wrapper
+{
+    width: 100%;
+    margin-top: 140px;
+}
+
 .all-cars-section
 {
-    margin-top: 140px;
     background-color: #fff;
     height: 100%;
     padding: 50px 80px;
     font-family: 'Poppins', sans-serif;
+    max-width: 1400px;
+    margin: 0 auto;
+
 }
 .all-cars-section .category-title 
 {
@@ -17,7 +27,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .car-wrapper
@@ -26,6 +36,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+    border: 0.5px solid #514d4d;
 
 }
 
@@ -41,6 +52,11 @@
    -ms-border-radius: 10px;
    -o-border-radius: 10px;
 }
+.car-col-2 .prices span
+{
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+}
 
 .car-col-2 .dailyrate
 {
@@ -53,7 +69,7 @@
 
 .car-col-2 h6
 {
-    font-size: 15px;
+    font-size: 16px;
 }
 .car-col-1
 {

@@ -65,7 +65,7 @@
                 <div>
                     <h6>Fuel: {{ $viewcar->fuel}}</h6>
                     <h6>Displacement: {{ $viewcar->displacement}} cc</h6>
-                    <h6>Mileage: {{ $viewcar->mileage}} km</h6>
+                    <h6>Color: {{ $viewcar->color}} km</h6>
                     <h6>Car Location: {{ $viewcar->carlocation}}</h6>
                     <h6>Transmission: {{ $viewcar->transmission}}</h6>
                 </div>

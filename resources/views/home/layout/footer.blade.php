@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-row">
         <div class="footer-col">
-            <img src="/images/LOGOxwhitefooter.webp" alt="logo" class="footer-logo">
+            <img src="/images/LOGOxwhitefooter.webp" alt="logo" class="footer-logo" loading="lazy">
             <p class="pr-4">Balili Car Rental is an organization established to cater the peoples’ need to use a vehicle. With cars of different seaters, color, and sizes, this organization aim to let people rent a car in the meantime.</p>
         </div>
         
@@ -36,8 +36,8 @@
             </form> -->
 
             <div class="social-icons">
-                <a href="https://web.facebook.com/AJABcarental" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://goo.gl/maps/8uig7REFPGVfxS4w7" aria-label="Find us on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100000787774311" aria-label="Visit our Facebook page"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://g.co/kgs/QXdZtx1" aria-label="Find us on Google Maps"><i class="fas fa-map-marker-alt"></i></a>
             </div>
         </div>
         

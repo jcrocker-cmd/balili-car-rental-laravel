@@ -29,8 +29,6 @@
 
 <div class="home-sidebar">
   <span class="close-btn" class="home-sidebar-toggle">&times;</span>
-
-
   <div>
     <a href="#" id="scroll-up-2">Home</a>
     <a href=".featured-section">Features</a>

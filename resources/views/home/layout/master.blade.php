@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top of the page">▲</a>
+<a href="#" class="scrollup" id="scroll-up" aria-label="Scroll to top of the page"><i class="fas fa-arrow-up"></i></a>
 
 <!-- PRELOADER -->
 
