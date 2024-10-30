@@ -242,6 +242,16 @@
     {
         font-size: 13px;
     }
+    .all-cars-section h3
+    {
+        font-size: 18px;
+    }
+    .all-cars-section .lines
+    {
+        width: 60px;
+        height: 2px;
+        background-color: black;
+    }
 }
 
 @media (max-width: 450px) {
