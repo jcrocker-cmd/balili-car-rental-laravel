@@ -266,20 +266,20 @@
 .featured-row-1 .featured-col-2 .prices h3 ,
 .featured-row-2 .featured-col-1 .prices h3 
 {
-    font-size: 12px;
+    font-size: 15px;
     
 }
 
 .featured-row-1 .featured-col-2 .desc,
 .featured-row-2 .featured-col-1 .desc
 {
-    font-size: 12px;
+    font-size: 15px;
 }
 
   .featured-row-1 .button a ,
   .featured-row-2 .button a 
   {
-    font-size: 12px;
+    font-size: 15px;
   }
 
   .featured-row-1 .featured-col-1 img,
@@ -290,7 +290,7 @@
 
  .featured-wrapper .header h3
 {
-   font-size: 15px;
+   font-size: 18px;
 }
 
 .featured-wrapper .header .lines

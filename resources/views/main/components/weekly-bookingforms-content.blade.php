@@ -36,7 +36,7 @@
                             <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz" onkeyup="javascript:capitalize(this);" pattern=".{8,}" required>
                             <!-- <span class="text-danger" id="errorname">@error('name') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
-                                Enter Name (min:8)
+                                Enter name.
                             </div>
                         </div>
 
@@ -83,7 +83,7 @@
                     <div style="margin-bottom: 25px;" class="requirements">
                         <h5 style="color: #005281"><strong>Requirements</strong></h5> 
                         <hr class="bg-dark">
-                        <h6>1. Driver's license<strong class="pic-limit">(provide your driver's license upon meet-up.)</strong></h6>
+                        <h6>1. Driver's license<strong class="pic-limit">(provide license upon meet-up.)</strong></h6>
 
                         <h6>2. Pay before drive</h6>
                         

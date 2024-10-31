@@ -235,35 +235,36 @@
    }
 
 
-    .contact-us h2
+    .contact-us h2,
+    .contact-col-1 h3
     {
-    font-size: 20px;
+    font-size: 18px;
     }
 
    .contact-col-1 h4
    {
-    font-size: 14px;
+    font-size: 18px;
    }
    .contact-col-1 p ,
    .contact-col-2 p ,
    .contact-col-1 ,
    .contact-title p
    {
-    font-size: 12px;
+    font-size: 15px;
    }
 
 
    .contact-col-2 h4 ,
    .col-2-title
    {
-    font-size: 14px;
+    font-size: 18px;
    }
 
    .contact-box .icon
     {
         min-width: 30px;
         height: 30px;
-        font-size: 12px;
+        font-size: 15px;
     }
 
 

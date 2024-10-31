@@ -60,27 +60,30 @@
 
         <div class="how-container">
 
-<div class="how-card" id="howcard-1">
-  <div class="circle">
-    <div class="text-center text-white pb-3 card-logo"><i class="fas fa-user fa-3x"></i></div>
-    <div class="text-white"><h3>Enter Credentials</h3></div>
-  </div>
-  <div class="content">
-    <p>To get started, simply enter your login credentials or create a new account to access our services and enjoy a seamless booking experience.</p>
-    <a href="#">Read More</a>
-  </div>
-</div>
 
-<div class="how-card" id="howcard-2">
+        <div class="how-card" id="howcard-2">
   <div class="circle">
     <div class="text-center text-white pb-3 card-logo"><i class="fas fa-bookmark fa-3x"></i></div>
-    <div class="text-white"><h3>Book a Car</h3></div>
+    <div class="text-white"><h3>Select Car</h3></div>
   </div>
   <div class="content">
     <p>Once you're logged in, browse through our available cars and select the one that suits your preferences.</p>
     <a href="#">Read More</a>
   </div>
 </div>
+
+<div class="how-card" id="howcard-1">
+  <div class="circle">
+    <div class="text-center text-white pb-3 card-logo"><i class="fas fa-user fa-3x"></i></div>
+    <div class="text-white"><h3>Credentials</h3></div>
+  </div>
+  <div class="content">
+  <p>To get started, simply enter your credentials, select a start date and return date, and click submit.</p>
+    <a href="#">Read More</a>
+  </div>
+</div>
+
+
 
 <div class="how-card" id="howcard-3">
   <div class="circle">

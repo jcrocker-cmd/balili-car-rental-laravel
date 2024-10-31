@@ -24,9 +24,9 @@
 
                         <div class="car-col-2">
 
-                            <div class="d-flex" style="gap: 10px;">
-                                <h5 class="brand"><strong>{{ $item->brand}} {{ $item->model}}</strong></h5> 
-                                <p class="transmission">{{ $item->transmission}}</p>
+                            <div class="d-flex flex-column" style="gap: 10px;">
+                                <span class="text-center car-card-title">{{ $item->brand}} {{ $item->model}}</span>
+                                <span class=""><p class="transmission">{{ $item->transmission}} Transmission</p></span>
                             </div>
 
                                 <p class="location">{{ $item->carlocation}}</p>
