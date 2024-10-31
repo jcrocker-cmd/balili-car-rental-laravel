@@ -300,13 +300,11 @@ nav .far
     {
         display: block;
         cursor: pointer;
-        
     }
-
 
    .header-col-1 .logo
     {
-        width: 100px;
+        width: 120px;
         
     }
 }
