@@ -92,8 +92,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'ajabcarrentalcebu@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'AJAB Services Website'),
+        'address' => env('MAIL_FROM_ADDRESS', 'narbajajc@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Balili Car Rental'),
     ],
 
     /*
