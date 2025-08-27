@@ -45,15 +45,11 @@
                             
                             <!-- Country Code & Phone Input -->
                             <input type="tel" id="whatsapp_viberNumber" class="form-control" placeholder="WhatsApp or Viber number" oninput="setPhoneData()" required>
-
+                            <input type="hidden" name="fullPhoneNumber" id="fullPhoneNumber">
                             <div class="invalid-feedback">
                                 Enter a WhatsApp/Viber number.
                             </div>
                         </div>
-
-                        <!-- Hidden fields to store extracted data -->
-                        <input type="hidden" id="countryCode" name="country_code" autocomplete="off">
-                        <input type="hidden" id="fullPhoneNumber" name="con_num" autocomplete="off">
 
 
                     </div>
@@ -257,23 +253,27 @@
 
                     <div class="price-info">
 
-                        <div class="alert alert-warning text-center" role="alert">
+                        <div id="rateTypeAlert" class="alert alert-warning text-center" role="alert">
                         You are using <strong>MONTHLY RATE</strong> 
                         </div>
 
                         <div style="width: 100%;" hidden>
                             <label class="form-label">Dailyrate</label>
-                            <input type="text" id="car_price" name="" value="{{ $car_details->monthlyrate}}">
+                            <input type="text" id="car_price_daily" name="" value="{{ $car_details->dailyrate}}">
+                        </div>
+                        <div style="width: 100%;" hidden>
+                            <label class="form-label">Weeklyrate</label>
+                            <input type="text" id="car_price_weekly" name="" value="{{ $car_details->weeklyrate}}">
+                        </div>
+
+                        <div style="width: 100%;" hidden>
+                            <label class="form-label">Monthlyrate</label>
+                            <input type="text" id="car_price_monthly" name="" value="{{ $car_details->monthlyrate}}">
                         </div>
 
                         <div style="width: 100%;" hidden>
                             <label class="form-label">Total Rates</label>
                             <input type="text" id="total_rates_input" name="total_rates" value="0">
-                        </div>
-
-                        <div class="justify-content-between d-flex">
-                            <p>Total Rates</p>
-                            <p>₱ <span id="total_rates">0</span></p>
                         </div>
 
                         <div class="justify-content-between total_weeks_months">
@@ -282,7 +282,7 @@
                             <div>
                             <select id="total_months_select" name="total_weeks">
                                 <?php
-                                for ($i = 1; $i <= 20; $i++) {
+                                for ($i = 1; $i <= 12; $i++) {
                                     echo '<option value="' . $i . '">' . $i . '</option>';
                                 }
                                 ?>
@@ -291,6 +291,40 @@
 
                         </div>
 
+                        <div class="justify-content-between total_weeks_months">
+                            <div><label>Total Week/s</label></div>
+
+                            <div>
+                            <select id="total_weeks_select" name="total_weeks">
+                                <?php
+                                for ($i = 0; $i <= 10; $i++) {
+                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                }
+                                ?>
+                            </select>
+                            </div>
+
+                        </div>
+
+                            <div class="justify-content-between total_weeks_months">
+                            <div><label>Total Day/s</label></div>
+
+                            <div>
+                            <select id="total_days_select" name="total_days">
+                                <?php
+                                for ($i = 0; $i <= 10; $i++) {
+                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                }
+                                ?>
+                            </select>
+                            </div>
+
+                        </div>
+
+                        <div class="justify-content-between d-flex">
+                            <p>Total Rates</p>
+                            <p>₱ <span id="total_rates">0</span></p>
+                        </div>
 
                         <div class="justify-content-between d-flex">
                             <p>Cashbond (Fully Refundable)</p>
@@ -323,6 +357,18 @@
                         <div style="width: 100%;" hidden>
                             <label class="form-label">VAT</label>
                             <input type="number" id="vat_input" name="" value="0" data-rules="bail|required|number|between:1,10">
+                        </div>
+
+                        
+                        <div class="justify-content-between d-flex">
+                            <p>Rental Duration
+                            </p>
+                            <p id="rental_duration_display">---</p>
+                        </div>
+
+                        <div style="width: 100%;" hidden>
+                            <label class="form-label">Rental Duration Input</label>
+                            <input type="hidden" id="rental_duration_input" name="rental_duration" value="">
                         </div>
 
 

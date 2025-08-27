@@ -1,7 +1,9 @@
 const startDateInput = document.getElementById('startdate');
+const totalDaysInput = document.getElementById('total_days_select');
 const totalWeeksInput = document.getElementById('total_weeks_select');
 const returnDateInput = document.getElementById('returndate');
-const carPriceInput = document.getElementById('car_price');
+const carPriceInputDaily = document.getElementById('car_price_daily');
+const carPriceInputWeekly = document.getElementById('car_price_weekly');
 const totalRatesParagraph = document.getElementById('total_rates');
 const _opt1 = document.getElementById("opt1");
 const _opt2 = document.getElementById("opt2");
@@ -20,6 +22,9 @@ const vatInput = document.getElementById("vat_input");
 const totalRatesInput = document.getElementById("total_rates_input");
 const cashbondCheckbox = document.getElementById('cashbond');
 
+
+const today = new Date().toISOString().split("T")[0];
+startDateInput.setAttribute("min", today);
 
 // Initialize previous delivery mode price to 0
 let previousOptionValue = 0;
@@ -76,26 +81,51 @@ cashbondCheckbox.addEventListener('change', () => {
 
 
 function updateReturnDateAndTotalRates() {
-  // Get the selected start date
-  const startDate = new Date(startDateInput.value);
+    // Get the selected start date
+    const startDate = new Date(startDateInput.value);
+    if (!startDateInput.value) return;
 
-  // Get the number of weeks and car price
-  const totalWeeks = parseFloat(_totalWeeksInput.value);
-  const carPrice = parseFloat(carPriceInput.value);
+    const totalWeeks = parseInt(totalWeeksInput.value) || 0;
+    const totalDays = parseInt(totalDaysInput.value) || 0;
+    const weeklyRate = parseFloat(carPriceInputWeekly.value) || 0;
+    const dailyRate = parseFloat(carPriceInputDaily.value) || 0;
 
-  // Calculate the return date and total rates
-  if (startDate && !isNaN(totalWeeks) && !isNaN(carPrice)) {
-    const returnDate = new Date(startDate.getTime() + totalWeeks * 7 * 24 * 60 * 60 * 1000);
-    const returnDateString = returnDate.toISOString().split('T')[0];
-    const totalRates = totalWeeks * carPrice;
-    
-    // Update the return date, total rates input, and paragraph elements
-    returnDateInput.value = returnDateString;
+    // Calculate total rental days
+    const totalRentalDays = totalWeeks * 7 + totalDays;
+
+    // Calculate return date
+    const returnDate = new Date(startDate.getTime() + totalRentalDays * 24 * 60 * 60 * 1000);
+    returnDateInput.value = returnDate.toISOString().split('T')[0];
+
+    // Calculate total rate (weeks * weekly rate + days * daily rate)
+    const totalRates = totalWeeks * weeklyRate + totalDays * dailyRate;
+
+    // Update total rates input and paragraph
     totalRatesInput.value = totalRates;
-    totalRatesParagraph.innerText = `${totalRates.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
+    totalRatesParagraph.innerText = totalRates.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+
+    const rateTypeAlert = document.getElementById('rateTypeAlert');
+    if (totalDays > 0) {
+        rateTypeAlert.innerHTML = 'You are using <strong>WEEKLY + DAILY RATE</strong>';
+    } else {
+        rateTypeAlert.innerHTML = 'You are using <strong>WEEKLY RATE</strong>';
+    }
+
+    const parts = [
+    totalWeeks && `${totalWeeks} week${totalWeeks > 1 ? "s" : ""}`,
+    totalDays && `${totalDays} day${totalDays > 1 ? "s" : ""}`
+    ];
+
+    const durationText = parts.filter(Boolean).join(" ") || "0 days";
+    
+    document.getElementById("rental_duration_display").innerText = durationText;
+    document.getElementById("rental_duration_input").value = durationText;
     updateTotalAmountPayable();
-  }
 }
+
 
 
 
@@ -103,7 +133,7 @@ function updateTotalAmountPayable() {
   const totalRate = parseFloat(totalRatesInput.value);
   const cashBond = parseFloat(_cashBondInput.value);
   const deliveryFee = parseFloat(_deliveryFeeInput.value);
-  const vat = _cardRadio.checked ? totalRate * 0.0275 : 0;
+  const vat = cardRadio.checked ? totalRate * 0.0275 : 0;
   vatParagraph.textContent = vat.toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -119,8 +149,9 @@ startDateInput.addEventListener('change', () => {
   updateReturnDateAndTotalRates();
   updateTotalAmountPayable();
 });
+totalDaysInput.addEventListener('change', updateReturnDateAndTotalRates);
 totalWeeksInput.addEventListener('change', updateReturnDateAndTotalRates);
-carPriceInput.addEventListener('change', updateReturnDateAndTotalRates);
+carPriceInputWeekly.addEventListener('change', updateReturnDateAndTotalRates);
 cashRadio.addEventListener("change", updateTotalAmountPayable);
 gCashRadio.addEventListener("change", updateTotalAmountPayable);
 cardRadio.addEventListener("change", updateTotalAmountPayable);

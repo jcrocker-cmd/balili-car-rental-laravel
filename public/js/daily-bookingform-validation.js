@@ -11,6 +11,13 @@ $.validator.addMethod('returndate', function(value, element) {
   return returnDate >= startDate;
 }, 'Return date must be after start date.');
 
+// Add custom validator for intl-tel-input
+$.validator.addMethod("validPhone", function(value, element) {
+    const itiInstance = window.intlTelInputGlobals.getInstance(element);
+    return itiInstance.isValidNumber();
+}, "Please enter a valid phone number.");
+
+
 $(document).ready(function() {
   // Initialize the validator
   var validator = $('#daily_bookingForm').validate({
@@ -28,7 +35,8 @@ $(document).ready(function() {
           },
           return_time: {
               required: true
-          }
+          },
+          fullPhoneNumber: { required: true, validPhone: true }
       },
       messages: {
           start_date: {
@@ -42,7 +50,8 @@ $(document).ready(function() {
           },
           return_time: {
               required: 'Please enter a return time.'
-          }
+          },
+          fullPhoneNumber: { required: 'Please enter a WhatsApp/Viber number.' }
       },
       errorPlacement: function(error, element) {
           if (element.attr("name") === "start_date") {
@@ -53,9 +62,13 @@ $(document).ready(function() {
               error.insertAfter(element.next('#errorrd'));
           } else if (element.attr("name") === "return_time") {
               error.insertAfter(element.next('#errorrt'));
+          } else if (element.attr("name") === "fullPhoneNumber") {
+              error.insertAfter(element.next('#phoneError'));
           }
       },
       submitHandler: function(form) {
+          showLoading();
+          $(form).find('button[type="submit"]').prop('disabled', true);
           form.submit();
       }
   });
@@ -69,4 +82,35 @@ $(document).ready(function() {
   $('#startdate, #starttime, #returndate, #returntime').on('change blur', function() {
       validator.element(this);
   });
+});
+
+
+function showLoading() {
+    if ($('#loadingOverlay').length === 0) {
+        $('body').append(`
+            <div id="loadingOverlay" style="
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            ">
+                <div style="color:white; font-size:20px;">
+                    Loading...
+                </div>
+            </div>
+        `);
+    }
+}
+
+
+
+window.addEventListener('pageshow', function(event) {
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) {
+        overlay.remove();
+    }
 });

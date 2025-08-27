@@ -77,11 +77,12 @@ class BookingformsController extends Controller
             
         $data = [
             'name' => $request->name,
-            'con_num' => $request->con_num,
+            'con_num' => $request->fullPhoneNumber,
             'address' => $request->address,
             'con_email' => $request->con_email,
             'mode_del' => $request->mode_del,
             'payment' => $request->payment,
+            'rental_duration' => $request->rental_duration,
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
@@ -146,11 +147,12 @@ class BookingformsController extends Controller
             
         $data = [
             'name' => $request->name,
-            'con_num' => $request->con_num,
+            'con_num' => $request->fullPhoneNumber,
             'address' => $request->address,
             'con_email' => $request->con_email,
             'mode_del' => $request->mode_del,
             'payment' => $request->payment,
+            'rental_duration' => $request->rental_duration,
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
@@ -195,7 +197,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.weekly-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('marzbalskie@gmail.com');
+            $message->to('narbajajc@gmail.com');
             $message->cc($data['con_email']);
             $message->subject('Weekly Booking Form');
         
@@ -216,11 +218,12 @@ class BookingformsController extends Controller
    
         $data = [
             'name' => $request->name,
-            'con_num' => $request->con_num,
+            'con_num' => $request->fullPhoneNumber,
             'address' => $request->address,
             'con_email' => $request->con_email,
             'mode_del' => $request->mode_del,
             'payment' => $request->payment,
+            'rental_duration' => $request->rental_duration,
             'start_date' => $request->start_date,
             'start_time' => $request->start_time,
             'return_date' => $request->return_date,
@@ -265,7 +268,7 @@ class BookingformsController extends Controller
     
         // Send email notification
         Mail::send('main.monthly-email-template', ['data' => $data], function($message) use ($data) {
-            $message->to('marzbalskie@gmail.com');
+            $message->to('narbajajc@gmail.com');
             $message->cc($data['con_email']);
             $message->subject('Monthly Booking Form');
         });

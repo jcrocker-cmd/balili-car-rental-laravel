@@ -53,15 +53,11 @@
                             
                             <!-- Country Code & Phone Input -->
                             <input type="tel" id="whatsapp_viberNumber" class="form-control" placeholder="WhatsApp or Viber number" oninput="setPhoneData()" required>
-
-                            <div class="invalid-feedback">
+                            <input type="hidden" name="fullPhoneNumber" id="fullPhoneNumber">
+                            <div class="invalid-feedback" id="phoneError">
                                 Enter a WhatsApp/Viber number.
                             </div>
                         </div>
-
-                        <!-- Hidden fields to store extracted data -->
-                        <input type="hidden" id="countryCode" name="country_code" autocomplete="off">
-                        <input type="hidden" id="fullPhoneNumber" name="con_num" autocomplete="off">
 
                     </div>
 
@@ -278,13 +274,13 @@
                         </div>
 
                         <div class="justify-content-between d-flex">
-                            <p>Total Rates</p>
-                            <p>₱ <span id="total_rates">0</span></p>
+                            <p>Total Day/s</p>
+                            <p><span id="total_days">0</span></p>
                         </div>
 
                         <div class="justify-content-between d-flex">
-                            <p>Total Day/s</p>
-                            <p><span id="total_days">0</span></p>
+                            <p>Total Rates</p>
+                            <p>₱ <span id="total_rates">0</span></p>
                         </div>
 
                         <div style="width: 100%;" hidden>
@@ -323,6 +319,12 @@
                         <div style="width: 100%;" hidden>
                             <label class="form-label">VAT</label>
                             <input type="number" id="vat_input" name="total_days" value="0" data-rules="bail|required|number|between:1,10">
+                        </div>
+
+
+                        <div style="width: 100%;" hidden>
+                            <label class="form-label">Rental Duration Input</label>
+                            <input type="hidden" id="rental_duration_input" name="rental_duration" value="">
                         </div>
 
 

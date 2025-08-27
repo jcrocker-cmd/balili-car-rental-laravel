@@ -18,6 +18,10 @@ const _totalAmountPayableText = document.getElementById("totalAmountPayable");
 const cashbondCheckbox = document.getElementById('cashbond');
 
 
+const today = new Date().toISOString().split("T")[0];
+startDateInput.setAttribute("min", today);
+returnDateInput.setAttribute("min", today);
+
 let previousOptionValue = 0;
 const deliveryOptions = document.querySelectorAll('input[name="mode_del"]');
 
@@ -81,6 +85,8 @@ function updateTotalDays() {
   // update the value of the Total Days input
   const totalDaysInput = document.getElementById("total_days_input");
   totalDaysInput.value = totalDays;
+  document.getElementById("rental_duration_input").value = `${totalDays} Day${totalDays > 1 ? "s" : ""}`;
+
 
   // update the text content of the <p> element for the total days
   const totalDaysParagraph = document.getElementById("total_days");
@@ -92,8 +98,7 @@ function updateTotalDays() {
   const totalRate = dailyRate * totalDays;
 
   // update the text content of the <p> element for the total rate
-// update the text content of the <p> element for the total rate (with commas)
-const totalRateParagraph = document.getElementById("total_rates");
+  const totalRateParagraph = document.getElementById("total_rates");
   totalRateParagraph.textContent = totalRate.toLocaleString("en-US", { 
     minimumFractionDigits: 2, 
     maximumFractionDigits: 2 
@@ -120,7 +125,21 @@ function updateTotalAmountPayable() {
 }
 
 
-startDateInput.addEventListener('change', updateTotalDays);
+startDateInput.addEventListener("change", () => {
+  if (!startDateInput.value) return;
+
+  let minReturn = new Date(startDateInput.value);
+  minReturn.setDate(minReturn.getDate() + 1);
+
+  let minDate = minReturn.toISOString().split("T")[0];
+  returnDateInput.min = minDate;
+  if (!returnDateInput.value || returnDateInput.value < minDate) {
+    returnDateInput.value = minDate;
+  }
+
+  updateTotalDays();
+});
+
 returnDateInput.addEventListener('change', updateTotalDays);
 cashRadio.addEventListener("change", updateTotalAmountPayable);
 gCashRadio.addEventListener("change", updateTotalAmountPayable);

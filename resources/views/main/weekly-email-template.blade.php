@@ -128,8 +128,8 @@
         <td style="padding: 10px;">{!! $data['mode_del'] !!}</td>
       </tr>
       <tr>
-        <td style="padding: 10px;">Color</td>
-        <td style="padding: 10px;">{!! $data['car_details']->color !!}</td>
+        <td style="padding: 10px;">Rental Duration</td>
+        <td style="padding: 10px;">{!! $data['rental_duration'] !!}</td>
       </tr>
     </tbody>
 
