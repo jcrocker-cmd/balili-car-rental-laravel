@@ -33,7 +33,7 @@
 
                         <div style="width: 100%;">
                             <label class="form-label">Full Name</label>
-                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz"  required>
+                            <input type="text" id="name" class="form-control " name="name" placeholder="Ex. Cruz"  required minlength="4">
                             <!-- <span class="text-danger" id="errorname">@error('name') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
                                 Enter name.
@@ -68,7 +68,7 @@
                             <input type="text" class="form-control"  id="address" name="address" placeholder="Enter Address" value="" required>
                             <!-- <span class="text-danger" id="erroradd">@error('address') {{$message}} @enderror</span> -->
                             <div class="invalid-feedback">
-                                Enter you valid address.
+                                Enter your address.
                             </div>
                         </div>
 
