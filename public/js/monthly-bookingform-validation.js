@@ -56,6 +56,8 @@ $(document).ready(function() {
           }
       },
       submitHandler: function(form) {
+          showLoading();
+          $(form).find('button[type="submit"]').prop('disabled', true);
           form.submit();
       }
   });
@@ -69,4 +71,36 @@ $(document).ready(function() {
   $('#startdate, #starttime, #returndate, #returntime').on('change blur', function() {
       validator.element(this);
   });
+});
+
+
+function showLoading() {
+    if ($('#loadingOverlay').length === 0) {
+        $('body').append(`
+            <div id="loadingOverlay" style="
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: rgba(0,0,0,0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+            ">
+                <div style="color:white; 
+                    font-size:20px; font-family: 
+                    poppins, sans-serif;">
+                    Processing your booking...
+                </div>
+            </div>
+        `);
+    }
+}
+
+
+window.addEventListener('pageshow', function(event) {
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) {
+        overlay.remove();
+    }
 });

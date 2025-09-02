@@ -73,6 +73,7 @@
 .booking-form-section .renter-info input
 {
     outline: none;
+    height: 45px;
 }
 
 .booking-form-section .renter-info label ,
@@ -99,7 +100,7 @@
 .total_weeks_months
 
 { 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* Force the intl-tel-input to take 100% width */
@@ -114,7 +115,8 @@
 .mode_del h5 ,
 .pay_med h5
 {
-    font-size: 17px;
+    font-size: 22px;
+    text-transform: uppercase;
 }
 
 
@@ -585,6 +587,12 @@
 
     }
 
+    /* .booking-form-section .renter-info input
+    {
+        outline: none;
+        height: 35px;
+    } */
+
     .error,
     .invalid-feedback,
     .error-message
@@ -626,14 +634,7 @@
     .mode_del h5 ,
     .pay_med h5
     {
-        font-size: 18px;
-    }
-    
-    .booking-form-section .requirements h5 ,
-    .mode_del h5 ,
-    .pay_med h5
-    {
-        margin-top: 30px;
+        font-size: 22px;
     }
 
     .booking-form-section .sect-1 .renter-info 

@@ -13,8 +13,7 @@
             @foreach($addcar as $item)
                 @if ($item->is_active == true)
                 <div class="car-wrapper">
-                    <a href="/mainviewcar/{{ $item->slug }}" class="text-dark car-link" style="text-decoration: none;" title="View Car">
-                
+             
                         <div class="car-col-1">
 
                         <img src="/images/uploads/{{ $item->carphoto }}"
@@ -40,23 +39,14 @@
                             <div class="d-flex flex-column align-items-start mt-1" style="gap: 10px;">
                                 <span><h6><i class="fas fa-user" style="margin-right: 10px;"></i>{{ $item->seats }} Seaters</h6></span>
                                 <span><h6><i class="fas fa-gas-pump" style="margin-right: 10px;"></i>{{ $item->fuel }}</h6></span>
-                                <span><h6><i class="fas fa-fill" style="margin-right: 10px;"></i>{{ $item->color }}</h6></span>
-
                             </div>
-                    </a>
+
                             
                             <div class="carbuttons">
-                                <a href="/mainviewcar/{{ $item->slug }}" class="btn-addcart">
-                                    <span><i class="far fa-car"></i></span>
-                                    <span>VIEW CAR</span>
-                                </a>
-                                
-
                                 <a href="/bookingforms/{{ $item->slug }}" class="btn-checkout text-decoration-none">
                                     <span><i class="fas fa-caret-right"></i></span>
                                     <span>BOOK NOW</span>
                                 </a>
-                            
                             </div>
 
                         </div>

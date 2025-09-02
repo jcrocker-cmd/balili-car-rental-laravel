@@ -131,6 +131,10 @@
         <td style="padding: 10px;">Mode of Delivery</td>
         <td style="padding: 10px;">{!! $data['mode_del'] !!}</td>
       </tr>
+      <tr>
+        <td style="padding: 10px;">Rental Duration</td>
+        <td style="padding: 10px;">{!! $data['rental_duration'] !!}</td>
+      </tr>
     </tbody>
 
 
@@ -148,7 +152,7 @@
       </tr>
       <tr>
         <td style="padding: 10px;">Total Amount Payable</td>
-        <td style="padding: 10px;">₱ {!! $data['total_amount_payable'] !!}</td>
+        <td style="padding: 10px;">₱ {!! number_format($data['total_amount_payable'], 2) !!}</td>
       </tr>
     </tbody>
 
