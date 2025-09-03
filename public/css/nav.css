@@ -5,6 +5,7 @@
 header
 {
 	width: 100%;
+
 }
 .logo
 {
@@ -12,21 +13,18 @@ header
     
 }
 nav{
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: flex;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.6s;
-    background:	#EEEFF1;  
-    padding-top: 20px;
-    padding-bottom: 20px;
+    max-width: 1250px;
+    margin: auto;
+    /* background:	#EEEFF1;   */
+    padding-top: 40px;
+    padding-bottom: 40px;
     z-index: 1;
-    /* gap: 100px; */
-    padding-left: 100px;
-    padding-right: 100px;
     justify-content: space-between;
     font-weight: 500;
 }
@@ -60,9 +58,9 @@ nav .header-col-middle div a{
 nav .header-col-middle div {
     position: relative;
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+    font-weight: 500;
     transition: 0.6s;
-    font-size: 13px;
+    font-size: 16px;
 }
 nav.header-col-middle div a:hover
 {
@@ -71,14 +69,6 @@ nav.header-col-middle div a:hover
 
 }
 
-nav.sticky{
-    padding: 20px 110px;
-    background: #fff;
-	box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-	-webkit-box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-	-moz-box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-
-}
 nav .header-col-middle div a::after
 {
     content: "";
@@ -237,6 +227,42 @@ nav .far
     outline: none;
     border: none;
   }
+
+
+  /* TOP HEADER */
+  .wrapper
+  {
+    width: 100%;
+    background: #007F66;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+  }
+
+  .section
+  {
+    max-width: 1250px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+  }
+
+  .section .right
+  {
+    display: flex;
+    gap: 20px;
+  }
+
+    .section .left
+  {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+  
   
 
 
@@ -258,14 +284,6 @@ nav .far
     {
         padding: 20px 20px;
         justify-content: space-between;
-    }
-    nav.sticky{
-        padding: 20px 20px;
-        background: #fff;
-        box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-        -webkit-box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-        -moz-box-shadow: 1px -1px 83px -29px rgba(0,0,0,0.75);
-    
     }
 
     #home-side-bar-btn ,

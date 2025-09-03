@@ -8,6 +8,7 @@
 @endsection
 
 @section('content') 
+    @include('home.layout.topheader')
     @include('home.layout.header')
     @include('home.components.homepage-content')
     @include('home.components.featured-content')

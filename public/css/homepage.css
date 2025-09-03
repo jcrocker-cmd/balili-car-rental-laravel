@@ -1,3 +1,7 @@
+.wrapper
+{
+	width: 100%;
+}
 
 .home
 {
@@ -6,9 +10,7 @@
     background-size: cover;
     background-repeat: no-repeat;
   	background-position: center;
-    /* margin-top: 70px; */
-    margin-top: 73px;
-    height: 100vh;
+    height: 80vh;
     align-items: center;
     width: 100%;
     font-family: 'Poppins', sans-serif;
@@ -20,6 +22,23 @@
     width: 100%;
     align-items: center;
     display: flex;
+    max-width: 1250px;
+    margin: auto;
+}
+
+#homeHeading,
+.homepage-col1 p {
+    color: black;
+}
+.right .email, .right .phone
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.homepage-col1 p {
+    font-size: 16px;
 }
 .homepage-col1 , .homepage-col2
 {
@@ -27,7 +46,7 @@
 }
 .homepage-col1
 {
-    padding: 0px 100px;
+    padding-right: 100px;
     align-items: center;
 }
 
@@ -46,21 +65,8 @@
     width: 90px;
 }
 
-@media (max-width:1000px) {
-
-    .home
-    {
-        margin-top: 70px;
-    }
-}
-
 
 @media (max-width:805px) {
-
-    .home
-    {
-        margin-top: 66px;
-    }
 
     .homepage-col1
     {
