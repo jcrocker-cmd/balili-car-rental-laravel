@@ -56,9 +56,20 @@
     font-weight: 600;
  
 }
-.homepage-button
+.view-rental-btn
 {
-    gap: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: large;
+    text-decoration: none;
+    background-color: #007bff;
+}
+
+.view-rental-btn:hover
+{
+    background-color: #002c7f;
+    transition: 0.5s;
 }
 .homepage-button input
 {

@@ -1,8 +1,16 @@
+.contact-wrapper
+{
+	width: 100%;
+}
+
+
 #contact-us
 {
     font-size: 14px;
     width: 100%;
-    padding: 100px 100px;
+    padding: 100px 0px;
+    max-width: 1250px;
+    margin: auto;
 }
 
 .contact-title

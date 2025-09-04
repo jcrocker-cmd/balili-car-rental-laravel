@@ -8,7 +8,10 @@
                     a car in the meantime.</p>
 
                 <div class="d-flex homepage-button pt-2">
-                    <a href="/home" class="btn bg-primary px-3 py-3 text-white view-rental-btn text">BOOK NOW</a>
+                    <a href="/home" class=" px-3 py-3 text-white view-rental-btn text">
+                        <i class="fas fa-car"></i>
+                        <span>BOOK NOW</span>
+                    </a>
                 </div>
 
                 <div class="homepage-col2">

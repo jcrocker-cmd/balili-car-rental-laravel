@@ -2,7 +2,7 @@
     <div class="featured-wrapper">
         <div class="header">
             <div class="lines"></div>
-            <div><h3>Featured Rentals</h3></div>
+            <div><h3>Most Rented</h3></div>
             <div class="lines"></div>
         </div>
 
