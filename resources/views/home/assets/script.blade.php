@@ -3,7 +3,7 @@
 <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
 <script src="/js/scrollanchor.js"></script>
 <script src="/js/scrollreveal.js"></script>
-<script src="/js/navbar-sticky.js"></script>
+<!-- <script src="/js/navbar-sticky.js"></script> -->
 <script src="/js/typewriter.js"></script>
 
 <script src="/js/alert-for-request.js"></script>

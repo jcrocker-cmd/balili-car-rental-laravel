@@ -14,7 +14,7 @@
           <div><a href=".featured-section">Most Rented</a></div>
           <div><a href=".howitworks">How to Rent</a></div>
           <div><a href=".contact-us">Contact Us</a></div>
-          <div><a href="/home" class="px-3 py-3 text-white view-rental-btn">BOOK NOW</a></div>
+          <div><a href="/home" class="bg-primary px-3 py-3 text-white view-rental-btn">BOOK NOW</a></div>
     </div>
 
 

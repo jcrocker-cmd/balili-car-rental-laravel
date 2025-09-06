@@ -1,6 +1,6 @@
 <section id="howitworks" class="howitworks">
     <div class="how-title">
-        <p>How it Works?</p>
+        <p>How to Rent?</p>
         <h2>Rent with 3 Easy Steps</h2>
     </div>
     <div class="how-container">
@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="content">
-                <p>Once you're logged in, browse through our available cars and select the one that suits your
+                <p>browse through our available cars and select the one that suits your
                     preferences.</p>
                 <!-- <a href="#">Read More</a> -->
             </div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="content">
-                <p>After booking a car, The owner will then get in touch with you to discuss further details, and any
+                <p>After booking a car, The rental agency then get in touch with you to discuss further details, and any
                     other necessary arrangements.</p>
                 <!-- <a href="#">Read More</a> -->
             </div>
