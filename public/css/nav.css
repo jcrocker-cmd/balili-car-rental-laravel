@@ -1,18 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-
-header
-{
-	width: 100%;
-
+header {
+    width: 100%;
 }
-.logo
-{
-    width: 130px;
-    
+.logo {
+    width: 150px;
 }
-nav{
+nav {
     position: flex;
     width: 100%;
     display: flex;
@@ -28,18 +23,19 @@ nav{
     justify-content: space-between;
     font-weight: 500;
 }
-.header-col-1 , .header-col-2
-{
+.header-col-1,
+.header-col-2 {
     gap: 40px;
     /* width: 500px; */
 }
 
-.header-col-middle
-{
+.header-col-middle span,
+.header-col-middle {
     gap: 30px;
     display: flex;
 }
-nav div {
+nav div,
+nav span {
     position: relative;
     display: flex;
     justify-content: center;
@@ -50,74 +46,59 @@ nav .header-col-middle div {
     list-style: none;
 }
 
-nav .header-col-middle div a{
+nav .header-col-middle div a {
     text-decoration: none;
-    color:#000000;
+    color: #000000;
 }
 
 nav .header-col-middle div {
     position: relative;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
     transition: 0.6s;
     font-size: 16px;
 }
-nav.header-col-middle div a:hover
-{
-	color: 	#007F66;
+nav.header-col-middle span a:hover {
+    color: #007f66;
     transition: 0.5s;
-
 }
 
-nav .header-col-middle div a::after
-{
+nav .header-col-middle span a::after {
     content: "";
     width: 0;
     height: 3px;
-    background: #007F66;
+    background: #007f66;
     position: absolute;
     bottom: -5px;
     left: 0;
     transition: 0.5s;
-
 }
-nav .header-col-middle div a:hover:after
-{
+nav .header-col-middle span a:hover:after {
     width: 100%;
     justify-content: center;
 }
 
-
-
-nav .far
-{
+nav .far {
     display: none;
 }
 
-.header-col-middle .view-rental-btn
-{
+.header-col-middle .view-rental-btn {
     background-color: #007bff;
     font-size: 13px;
     text-decoration: none;
     border-radius: 10px;
 }
 
-
-
 /* SIDE BAR */
-#home-side-bar-btn 
-{
+#home-side-bar-btn {
     display: none;
     text-decoration: none;
     color: #000000;
 }
 
-.home-sidebar-div
-{
+.home-sidebar-div {
     display: none;
 }
-
-
 
 .home-sidebar {
     height: 100vh;
@@ -130,35 +111,32 @@ nav .far
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
-    font-family: 'Poppins', sans-serif;
-    
-  }
-  
-  .home-sidebar a {
+    font-family: "Poppins", sans-serif;
+}
+
+.home-sidebar a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 13px;
     color: #d3d0d0;
     display: block;
     transition: 0.3s;
-  }
+}
 
-  .home-sidebar .links
-
-{
+.home-sidebar .links {
     padding: 8px 25px 8px 32px;
     gap: 20px;
 }
 
-  .home-sidebar .btn {
+.home-sidebar .btn {
     padding: 8px 0px 8px 0px;
-  }
-  
-  .home-sidebar a:hover {
+}
+
+.home-sidebar a:hover {
     color: #f1f1f1;
-  }
-  
-  .close-btn {
+}
+
+.close-btn {
     position: absolute;
     top: 11px;
     right: 25px;
@@ -166,49 +144,44 @@ nav .far
     margin-left: 50px;
     cursor: pointer;
     color: #d3d0d0;
-  }
-  
-  .close-btn:hover {
+}
+
+.close-btn:hover {
     color: #f1f1f1;
-  }
-  
-  .main-content {
+}
+
+.main-content {
     transition: margin-left 0.5s;
     padding: 20px;
-  }
-  
-  /* Change the width of the sidebar to 250px and the left margin of the page content to 250px */
-  .home-sidebar.active {
-    width: 250px;
-    
-  }
-  
-  .main-content.active {
-    margin-left: 250px;
-  }
+}
 
-  .home-sidebar hr
-  {
+/* Change the width of the sidebar to 250px and the left margin of the page content to 250px */
+.home-sidebar.active {
+    width: 250px;
+}
+
+.main-content.active {
+    margin-left: 250px;
+}
+
+.home-sidebar hr {
     color: #fff;
     background: #fff;
     margin: 15px 25px 15px 32px;
-  }
+}
 
-  .home-sidebar .user-profile 
-  {
+.home-sidebar .user-profile {
     padding: 8px 8px 8px 32px;
-  }
+}
 
-  .home-sidebar .user-info
-  {
-      font-size: 13px;
-      font-weight: 500;
-      color: #fff;
-  }
+.home-sidebar .user-info {
+    font-size: 13px;
+    font-weight: 500;
+    color: #fff;
+}
 
-  .links .btn-primary
-  {
-    background: #0D6EFD;
+.links .btn-primary {
+    background: #0d6efd;
     color: #fff;
     border-radius: 5px;
     display: flex;
@@ -216,10 +189,9 @@ nav .far
     outline: none;
     border: none;
     margin-bottom: 15px;
-  }
+}
 
-  .links .btn-success
-  {
+.links .btn-success {
     background: #198754;
     color: #fff;
     border-radius: 5px;
@@ -227,103 +199,79 @@ nav .far
     justify-content: center;
     outline: none;
     border: none;
-  }
+}
 
-
-  /* TOP HEADER */
-  .wrapper
-  {
+/* TOP HEADER */
+.wrapper {
     width: 100%;
-    background: #007F66;
+    background: #07b36e;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 13px;
-  }
+}
 
-  .section
-  {
+.section {
     max-width: 1250px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0px;
-  }
+}
 
-  .section .right
-  {
+.section .right {
     display: flex;
     gap: 20px;
-  }
+}
 
-    .section .left
-  {
+.section .left {
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
-  }
-  
-  
-
-
-
-@media (max-width:1000px) {
-
-    .header-col-middle , .header-col-2
-    {
-        display: none;
-    }
-    nav .far
-    {
-        display: flex;
-        cursor: pointer;
-        
-    }
-    
-    nav
-    {
-        padding: 20px 20px;
-        justify-content: space-between;
-    }
-
-    #home-side-bar-btn ,
-    .home-sidebar-div
-    {
-        display: block;
-    }
-
-    .header-col-1 .logo
-    {
-        width: 120px;
-        
-    }
-
-    #home-side-bar-btn
-    {
-        display: block;
-    }
-
-
 }
 
+@media (max-width: 1000px) {
+    .header-col-middle,
+    .header-col-2 {
+        display: none;
+    }
+    nav .far {
+        display: flex;
+        cursor: pointer;
+    }
 
-@media (max-width:805px) {
-    nav
-    {
+    nav {
         padding: 20px 20px;
         justify-content: space-between;
     }
-    
-    #mainside-bar
-    {
+
+    #home-side-bar-btn,
+    .home-sidebar-div {
+        display: block;
+    }
+
+    .header-col-1 .logo {
+        width: 120px;
+    }
+
+    #home-side-bar-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 805px) {
+    nav {
+        padding: 20px 20px;
+        justify-content: space-between;
+    }
+
+    #mainside-bar {
         display: block;
         cursor: pointer;
     }
 
-   .header-col-1 .logo
-    {
+    .header-col-1 .logo {
         width: 120px;
-        
     }
 }
