@@ -11,8 +11,8 @@
  @endsection
 
 @section('content') 
-    @include('main.layout.header-main')
-    @include('main.layout.header2-main')
+    @include('main.layout.topheader')
+    @include('main.layout.header')
     @include('main.components.weekly-bookingforms-content')
     @include('main.layout.footer')
 @endsection
@@ -29,8 +29,8 @@
     <!-- <script src="/js/parsley.js"></script> -->
     
 
-    <script src="/js/weekly-bookingform-validation.js"></script>
-    <script src="/js/weekly-bookingform-price.js"></script>
+        <script src="/js/weekly-bookingform-validation.js"></script>
+        <script src="/js/weekly-bookingform-price.js"></script>
     <script src="/js/moment-library.js"></script>
     <script src="/js/ajax-user-booking.js"></script>
 

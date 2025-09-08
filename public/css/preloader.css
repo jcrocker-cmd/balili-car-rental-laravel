@@ -22,7 +22,7 @@
 .linePreloader{
     width:170px;
     height:3px;
-    background:linear-gradient(to right, #4CB3DE, #4CB3DE);
+    background:linear-gradient(to right, #007f66, #007f66d3);
     background-color:#ccc;
     border-radius:4px;
     background-size:20%;

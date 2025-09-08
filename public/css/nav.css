@@ -89,6 +89,12 @@ nav .far {
     border-radius: 10px;
 }
 
+.header-col-middle .view-rental-btn:hover {
+    background-color: #002c7f;
+    color: #fff;
+    transition: 0.5s;
+}
+
 /* SIDE BAR */
 #home-side-bar-btn {
     display: none;

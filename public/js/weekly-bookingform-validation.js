@@ -1,13 +1,13 @@
 // Add custom methods for start and return dates and times
-$.validator.addMethod('startdate', function(value, element) {
+$.validator.addMethod('startdate_weekly', function(value, element) {
   var startDate = new Date(value);
   var today = new Date();
   return startDate >= today;
 }, 'Start date cannot be in the past.');
 
-$.validator.addMethod('returndate', function(value, element) {
+$.validator.addMethod('returndate_weekly', function(value, element) {
   var returnDate = new Date(value);
-  var startDate = new Date($('#startdate').val());
+  var startDate = new Date($('#startdate_weekly').val());
   return returnDate >= startDate;
 }, 'Return date must be after start date.');
 
@@ -15,44 +15,44 @@ $(document).ready(function() {
   // Initialize the validator
   var validator = $('#weekly_bookingForm').validate({
       rules: {
-          start_date: {
+          start_date_weekly: {
               required: true,
-              startdate: true
+              startdate_weekly: true
           },
-          start_time: {
+          start_time_weekly: {
               required: true
           },
-          return_date: {
+          return_date_weekly: {
               required: true,
-              returndate: true
+              returndate_weekly: true
           },
-          return_time: {
+          return_time_weekly: {
               required: true
           }
       },
       messages: {
-          start_date: {
+          start_date_weekly: {
               required: 'Please enter a start date.'
           },
-          start_time: {
+          start_time_weekly: {
               required: 'Please enter a start time.'
           },
-          return_date: {
+          return_date_weekly: {
               required: 'Please enter a return date.'
           },
-          return_time: {
+          return_time_weekly: {
               required: 'Please enter a return time.'
           }
       },
       errorPlacement: function(error, element) {
-          if (element.attr("name") === "start_date") {
-              error.insertAfter(element.next('#errorsd'));
-          } else if (element.attr("name") === "start_time") {
-              error.insertAfter(element.next('#errorst'));
-          } else if (element.attr("name") === "return_date") {
-              error.insertAfter(element.next('#errorrd'));
-          } else if (element.attr("name") === "return_time") {
-              error.insertAfter(element.next('#errorrt'));
+          if (element.attr("name") === "start_date_weekly") {
+              error.insertAfter(element.next('#errorsd_weekly'));
+          } else if (element.attr("name") === "start_time_weekly") {
+              error.insertAfter(element.next('#errorst_weekly'));
+          } else if (element.attr("name") === "return_date_weekly") {
+              error.insertAfter(element.next('#errorrd_weekly'));
+          } else if (element.attr("name") === "return_time_weekly") {
+              error.insertAfter(element.next('#errorrt_weekly'));
           }
       },
       submitHandler: function(form) {
@@ -63,12 +63,12 @@ $(document).ready(function() {
   });
 
   // Validate the form fields before submitting
-  $('#daily_bookingForm').on('submit', function() {
+  $('#weekly_bookingForm').on('submit', function() {
       return validator.form();
   });
 
   // Validate the form fields on change and blur events
-  $('#startdate, #starttime, #returndate, #returntime').on('change blur', function() {
+  $('#startdate_weekly, #starttime_weekly, #returndate_weekly, #returntime_weekly').on('change blur', function() {
       validator.element(this);
   });
 });
