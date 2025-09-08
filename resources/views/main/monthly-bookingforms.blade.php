@@ -11,8 +11,8 @@
 @endsection
 
 @section('content')
-@include('main.layout.header-main')
-@include('main.layout.header2-main')
+  @include('main.layout.topheader')
+  @include('main.layout.header')
 @include('main.components.monthly-bookingforms-content')
 @include('main.layout.footer')
 @endsection

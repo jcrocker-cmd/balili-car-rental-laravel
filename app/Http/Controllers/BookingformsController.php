@@ -32,7 +32,7 @@ class BookingformsController extends Controller
             ->whereNull('read_at')
             ->get();
         $car_details = AddCar::where('slug', $slug)->first();
-        return view('main.bookingforms', compact('car_details','notificationsUnread'));
+        return view('main.index-bookingform', compact('car_details','notificationsUnread'));
     }
 
     public function succes_booking_route()

@@ -2,7 +2,7 @@
 <script src="/js/navbar-sticky.js"></script>
 <script src="/js/datetoday.js"></script>
 <script src="/js/bookingforms-active.js"></script>
-<script src="/js/bookingforms-showhide.js"></script>
+<!-- <script src="/js/bookingforms-showhide.js"></script> -->
 <script src="/js/main-sidebar.js"></script>
 
 
