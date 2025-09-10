@@ -1,64 +1,64 @@
-const startDateInput = document.getElementById('startdate');
-const totalDaysInput = document.getElementById('total_days_select');
-const totalWeeksInput = document.getElementById('total_weeks_select');
-const returnDateInput = document.getElementById('returndate');
-const carPriceInputDaily = document.getElementById('car_price_daily');
-const carPriceInputWeekly = document.getElementById('car_price_weekly');
-const totalRatesParagraph = document.getElementById('total_rates');
-const _opt1 = document.getElementById("opt1");
-const _opt2 = document.getElementById("opt2");
-const _opt3 = document.getElementById("opt3");
-const _opt4 = document.getElementById("opt4");
-const _opt5 = document.getElementById("opt5");
-const _cashBondInput = document.getElementById("cashbondAmount_input");
-const _deliveryFeeInput = document.getElementById("delivery_fee_value_input");
-const _totalAmountPayableInput = document.getElementById("total_amount_payable_input");
-const _totalAmountPayableText = document.getElementById("totalAmountPayable");
-const cashRadio = document.getElementById("pay1");
-const gCashRadio = document.getElementById("pay2");
-const cardRadio = document.getElementById("pay3");
-const vatParagraph = document.getElementById("vat");
-const vatInput = document.getElementById("vat_input");
-const totalRatesInput = document.getElementById("total_rates_input");
-const cashbondCheckbox = document.getElementById('cashbond');
+const startDateInput_W = document.getElementById('startdate_weekly');
+const totalDaysInput_W = document.getElementById('total_days_select_W');
+const totalWeeksInput_W = document.getElementById('total_weeks_select_W');
+const returnDateInput_W = document.getElementById('returndate_weekly');
+const carPriceInputDaily_W = document.getElementById('car_price_daily_W');
+const carPriceInputWeekly_W = document.getElementById('car_price_weekly_W');
+const totalRatesParagraph_W = document.getElementById('total_rates_W');
+const _opt1_W = document.getElementById("opt1_W");
+const _opt2_W = document.getElementById("opt2_W");
+const _opt3_W = document.getElementById("opt3_W");
+const _opt4_W = document.getElementById("opt4_W");
+const _opt5_W = document.getElementById("opt5_W");
+const _cashBondInput_W = document.getElementById("cashbondAmount_input_W");
+const _deliveryFeeInput_W = document.getElementById("delivery_fee_value_input_W");
+const _totalAmountPayableInput_W = document.getElementById("total_amount_payable_input_W");
+const _totalAmountPayableText_W = document.getElementById("totalAmountPayable_W");
+const cashRadio_W = document.getElementById("pay1_W");
+const gCashRadio_W = document.getElementById("pay2_W");
+const cardRadio_W = document.getElementById("pay3_W");
+const vatParagraph_W = document.getElementById("vat_W");
+const vatInput_W = document.getElementById("vat_input_W");
+const totalRatesInput_W = document.getElementById("total_rates_input_W");
+const cashbondCheckbox_W = document.getElementById('cashbond_W');
 
 
-const today = new Date().toISOString().split("T")[0];
-startDateInput.setAttribute("min", today);
+const today_W = new Date().toISOString().split("T")[0];
+startDateInput_W.setAttribute("min", today_W);
 
 // Initialize previous delivery mode price to 0
-let previousOptionValue = 0;
-const deliveryOptions = document.querySelectorAll('input[name="mode_del"]');
+let previousOptionValue_W = 0;
+const deliveryOptions_W = document.querySelectorAll('input[del="mode_del_W"]');
 
 // Add event listener to each radio button
-deliveryOptions.forEach(option => {
+deliveryOptions_W.forEach(option => {
   option.addEventListener('click', () => {
     // Get the value of the selected delivery option
     const selectedOptionValue = option.getAttribute('data-delivery-price');
 
     // Calculate the new total price by subtracting the previous delivery mode price and adding the new one
-    const totalPriceElement = document.getElementById('delivery_fee_value');
+    const totalPriceElement = document.getElementById('delivery_fee_value_W');
     const currentPrice = parseFloat(totalPriceElement.innerText);
-    const newPrice = currentPrice - previousOptionValue + parseFloat(selectedOptionValue);
+    const newPrice = currentPrice - previousOptionValue_W + parseFloat(selectedOptionValue);
     totalPriceElement.innerText = newPrice.toFixed(2);
 
     // Update the input field value as well
-    const deliveryFeeInputElement = document.getElementById('delivery_fee_value_input');
+    const deliveryFeeInputElement = document.getElementById('delivery_fee_value_input_W');
     deliveryFeeInputElement.value = newPrice;
 
     // Update the previous delivery mode price to the current one
-    previousOptionValue = parseFloat(selectedOptionValue);
+    previousOptionValue_W = parseFloat(selectedOptionValue);
   });
 });
 
 
 
-cashbondCheckbox.addEventListener('change', () => {
-  const cashbondValue = parseInt(cashbondCheckbox.value);
-  const cashbondAmountElement = document.getElementById('cashbondAmount');
-  const cashbondInputElement = document.getElementById('cashbondAmount_input');
+cashbondCheckbox_W.addEventListener('change', () => {
+  const cashbondValue = parseInt(cashbondCheckbox_W.value);
+  const cashbondAmountElement = document.getElementById('cashbondAmount_W');
+  const cashbondInputElement = document.getElementById('cashbondAmount_input_W');
 
-  if (cashbondCheckbox.checked) {
+  if (cashbondCheckbox_W.checked) {
     // Checked → set cashbond
     cashbondAmountElement.innerText = cashbondValue.toLocaleString("en-US", {
       minimumFractionDigits: 2,
@@ -75,39 +75,39 @@ cashbondCheckbox.addEventListener('change', () => {
   }
 
   // Recalculate totals
-  updateTotalAmountPayable();
+  updateTotalAmountPayable_W();
 });
 
 
 
-function updateReturnDateAndTotalRates() {
+function updateReturnDateAndTotalRates_W() {
     // Get the selected start date
-    const startDate = new Date(startDateInput.value);
-    if (!startDateInput.value) return;
+    const startDate = new Date(startDateInput_W.value);
+    if (!startDateInput_W.value) return;
 
-    const totalWeeks = parseInt(totalWeeksInput.value) || 0;
-    const totalDays = parseInt(totalDaysInput.value) || 0;
-    const weeklyRate = parseFloat(carPriceInputWeekly.value) || 0;
-    const dailyRate = parseFloat(carPriceInputDaily.value) || 0;
+    const totalWeeks = parseInt(totalWeeksInput_W.value) || 0;
+    const totalDays = parseInt(totalDaysInput_W.value) || 0;
+    const weeklyRate = parseFloat(carPriceInputWeekly_W.value) || 0;
+    const dailyRate = parseFloat(carPriceInputDaily_W.value) || 0;
 
     // Calculate total rental days
     const totalRentalDays = totalWeeks * 7 + totalDays;
 
     // Calculate return date
     const returnDate = new Date(startDate.getTime() + totalRentalDays * 24 * 60 * 60 * 1000);
-    returnDateInput.value = returnDate.toISOString().split('T')[0];
+    returnDateInput_W.value = returnDate.toISOString().split('T')[0];
 
     // Calculate total rate (weeks * weekly rate + days * daily rate)
     const totalRates = totalWeeks * weeklyRate + totalDays * dailyRate;
 
     // Update total rates input and paragraph
-    totalRatesInput.value = totalRates;
-    totalRatesParagraph.innerText = totalRates.toLocaleString("en-US", {
+    totalRatesInput_W.value = totalRates;
+    totalRatesParagraph_W.innerText = totalRates.toLocaleString("en-US", {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     });
 
-    const rateTypeAlert = document.getElementById('rateTypeAlert');
+    const rateTypeAlert = document.getElementById('rateTypeAlert_W');
     if (totalDays > 0) {
         rateTypeAlert.innerHTML = 'You are using <strong>WEEKLY + DAILY RATE</strong>';
     } else {
@@ -121,48 +121,48 @@ function updateReturnDateAndTotalRates() {
 
     const durationText = parts.filter(Boolean).join(" ") || "0 days";
     
-    document.getElementById("rental_duration_display").innerText = durationText;
-    document.getElementById("rental_duration_input").value = durationText;
-    updateTotalAmountPayable();
+    document.getElementById("rental_duration_display_W").innerText = durationText;
+    document.getElementById("rental_duration_input_W").value = durationText;
+    updateTotalAmountPayable_W();
 }
 
 
 
 
-function updateTotalAmountPayable() {
-  const totalRate = parseFloat(totalRatesInput.value);
-  const cashBond = parseFloat(_cashBondInput.value);
-  const deliveryFee = parseFloat(_deliveryFeeInput.value);
-  const vat = cardRadio.checked ? totalRate * 0.0275 : 0;
-  vatParagraph.textContent = vat.toLocaleString("en-US", {
+function updateTotalAmountPayable_W() {
+  const totalRate = parseFloat(totalRatesInput_W.value);
+  const cashBond = parseFloat(_cashBondInput_W.value);
+  const deliveryFee = parseFloat(_deliveryFeeInput_W.value);
+  const vat = cardRadio_W.checked ? totalRate * 0.0275 : 0;
+  vatParagraph_W.textContent = vat.toLocaleString("en-US", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   });
-  vatInput.value = vat.toFixed(2);
+  vatInput_W.value = vat.toFixed(2);
   const totalAmountPayable = totalRate + cashBond + deliveryFee + vat;
-  _totalAmountPayableInput.value = totalAmountPayable.toFixed(2);
-  _totalAmountPayableText.textContent = totalAmountPayable.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+  _totalAmountPayableInput_W.value = totalAmountPayable.toFixed(2);
+  _totalAmountPayableText_W.textContent = totalAmountPayable.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
 
-startDateInput.addEventListener('change', () => {
-  updateReturnDateAndTotalRates();
-  updateTotalAmountPayable();
+startDateInput_W.addEventListener('change', () => {
+  updateReturnDateAndTotalRates_W();
+  updateTotalAmountPayable_W();
 });
-totalDaysInput.addEventListener('change', updateReturnDateAndTotalRates);
-totalWeeksInput.addEventListener('change', updateReturnDateAndTotalRates);
-carPriceInputWeekly.addEventListener('change', updateReturnDateAndTotalRates);
-cashRadio.addEventListener("change", updateTotalAmountPayable);
-gCashRadio.addEventListener("change", updateTotalAmountPayable);
-cardRadio.addEventListener("change", updateTotalAmountPayable);
-totalRatesInput.addEventListener("input", updateTotalAmountPayable);
-returnDateInput.addEventListener("change", updateTotalAmountPayable);
-cashbondCheckbox.addEventListener("change", updateTotalAmountPayable);
-_opt1.addEventListener("change", updateTotalAmountPayable);
-_opt2.addEventListener("change", updateTotalAmountPayable);
-_opt3.addEventListener("change", updateTotalAmountPayable);
-_opt4.addEventListener("change", updateTotalAmountPayable);
-_opt5.addEventListener("change", updateTotalAmountPayable);
-_cashBondInput.addEventListener("input", updateTotalAmountPayable);
-_deliveryFeeInput.addEventListener("input", updateTotalAmountPayable);
+totalDaysInput_W.addEventListener('change', updateReturnDateAndTotalRates_W);
+totalWeeksInput_W.addEventListener('change', updateReturnDateAndTotalRates_W);
+carPriceInputWeekly_W.addEventListener('change', updateReturnDateAndTotalRates_W);
+cashRadio_W.addEventListener("change", updateTotalAmountPayable_W);
+gCashRadio_W.addEventListener("change", updateTotalAmountPayable_W);
+cardRadio_W.addEventListener("change", updateTotalAmountPayable_W);
+totalRatesInput_W.addEventListener("input", updateTotalAmountPayable_W);
+returnDateInput_W.addEventListener("change", updateTotalAmountPayable_W);
+cashbondCheckbox_W.addEventListener("change", updateTotalAmountPayable_W);
+_opt1_W.addEventListener("change", updateTotalAmountPayable_W);
+_opt2_W.addEventListener("change", updateTotalAmountPayable_W);
+_opt3_W.addEventListener("change", updateTotalAmountPayable_W);
+_opt4_W.addEventListener("change", updateTotalAmountPayable_W);
+_opt5_W.addEventListener("change", updateTotalAmountPayable_W);
+_cashBondInput_W.addEventListener("input", updateTotalAmountPayable_W);
+_deliveryFeeInput_W.addEventListener("input", updateTotalAmountPayable_W);
 

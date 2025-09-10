@@ -38,3 +38,5 @@ init:
 	make migrate
 	make keygen
 	make recache
+cd:
+	/mnt/c/Users/Owner/Documents/HRMS/MY FILES/balili-car-rental-laravel

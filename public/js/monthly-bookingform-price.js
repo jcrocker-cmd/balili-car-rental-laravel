@@ -35,7 +35,7 @@ startDateInput_M.setAttribute("min", today_M);
 
 // Initialize previous delivery mode price to 0
 let previousOptionValue_M = 0;
-const deliveryOptions_M = document.querySelectorAll('input[name="mode_del"]');
+const deliveryOptions_M = document.querySelectorAll('input[del="mode_del_M"]');
 
 // Add event listener to each radio button
 deliveryOptions_M.forEach((option) => {
@@ -134,7 +134,7 @@ function updateReturnDateAndTotalRates_M() {
                 (totalMonths > 0 || totalWeeks > 0 ? " + " : "") +
                 "<strong>DAILY</strong>";
         document.getElementById(
-            "rateTypeAlert"
+            "rateTypeAlert_M"
         ).innerHTML = `${alertText} <strong>RATE</strong>`;
 
         const parts = [
