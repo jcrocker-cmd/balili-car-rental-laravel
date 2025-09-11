@@ -1,9 +1,8 @@
 /* ALUMNI ID & MEMBERSHIP */
 .success_page
 {
-    height: 100vh;
-    background: #fff;
-    margin-top: 50px;
+    height: 70vh;
+    background: #eef1f8;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -281,3 +281,38 @@ nav .far {
         width: 120px;
     }
 }
+
+
+@media (max-width: 1250px) {
+    .wrapper {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 630px) {
+
+    .section {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .section .right {
+        flex-direction: column;
+        justify-content: center;
+        gap: 0px;
+    }
+
+    .section .right .email,
+    .section .right .phone {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+    .section .left {
+        gap: 5px;
+    }
+}

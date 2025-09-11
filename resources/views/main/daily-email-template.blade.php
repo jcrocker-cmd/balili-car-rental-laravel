@@ -15,19 +15,18 @@
                     <tr>
                         <td align="center" style="padding: 20px;">
                             <img src="https://res.cloudinary.com/dnh4lkqlw/image/upload/v1757495629/LOGO_f1gfc4.png"
-                                width="200" alt="Logo">
-                            <h5 style="font-size: 24px; margin: 5px 0 5px; color:#003049;">
+                                width="150" alt="Logo">
+                            <h5 style="font-size: 18px; margin: 5px 0 5px; color:#000;">
                                 Daily Booking Form
                             </h5>
                         </td>
                     </tr>
-
                     <tr>
-                        <td style="padding: 20px;">
+                        <td style="padding: 10px;">
                             <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
-                                style="font-size: 14px; border:1px solid #003049; border-collapse:collapse;">
+                                style="font-size: 12px; border:1px solid #1e453e; border-collapse:collapse;">
                                 <thead>
-                                    <tr style="background:#003049; color:#fff;">
+                                    <tr style="background:#1e453e; color:#fff;">
                                         <th align="left" style="padding:10px; display: flex;">Renter Information</th>
                                         <th style="padding:10px;"></th>
                                     </tr>
@@ -57,7 +56,7 @@
                                     </tr>
                                 </tbody>
 
-                                <thead class="table-info" style="background: #003049; border:1px solid #003049; 
+                                <thead class="table-info" style="background: #1e453e; border:1px solid #1e453e; 
                                       color: white;
                                       ">
                                     <tr>
@@ -92,7 +91,7 @@
                                     </tr>
                                 </tbody>
 
-                                <thead class="table-info" style="background: #003049; border:1px solid #003049; 
+                                <thead class="table-info" style="background: #1e453e; border:1px solid #1e453e; 
                                       color: white;
                                       ">
                                     <tr>
@@ -137,7 +136,7 @@
                                 </tbody>
 
 
-                                <thead class="table-info" style="background: #003049; border:1px solid #003049;
+                                <thead class="table-info" style="background: #1e453e; border:1px solid #1e453e;
                                       color: white;
                                       ">
                                     <tr>
@@ -159,21 +158,52 @@
                             </table>
                         </td>
                     </tr>
+
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                        style="background-color:#f0f0f0;">
+                        <tr>
+                            <td style="text-align:center; padding:20px; font-size:12px; color:#777; line-height:1.6;">
+                                &copy; 2020 Cebu Rent N' Drive. All rights reserved.<br><br>
+
+                                If you have any questions, contact us at
+                                <a href="mailto:marzbalskie@gmail.com" style="color:#777; text-decoration: underline;">
+                                    marzbalskie@gmail.com
+                                </a> <br>
+                                or WhatsApp/Viber:
+                                <span style="color:#777; text-decoration: underline;">
+                                    +639771763187
+                                </span>
+                                <br><br>
+
+                                You're receiving this email because you made a booking request with us.
+                                <br><br>
+                                <table role="presentation" cellpadding="0" cellspacing="0" align="center">
+                                    <tr>
+                                        <td style="padding: 0 8px;">
+                                            <a href="https://goo.gl/maps/yourmaplink" target="_blank">
+                                                <img src="https://img.icons8.com/ios-filled/30/0C605C/marker.png"
+                                                    alt="Map" width="24" border="0" style="display:block;">
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 8px;">
+                                            <a href="https://facebook.com/yourpage" target="_blank">
+                                                <img src="https://img.icons8.com/ios-filled/30/0C605C/facebook-new.png"
+                                                    alt="Facebook" width="24" border="0" style="display:block;">
+                                            </a>
+                                        </td>
+                                        <td style="padding: 0 8px;">
+                                            <a href="https://yourwebsite.com" target="_blank">
+                                                <img src="https://img.icons8.com/ios-filled/30/0C605C/domain.png"
+                                                    alt="Website" width="24" border="0" style="display:block;">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
                 </table>
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f0f0f0;">
-          <tr>
-            <td style="text-align:center; padding:20px; font-size:12px; color:#777;">
-              &copy; 2024 Balili Car Rental. All rights reserved.<br>
-              If you have any questions, contact us at 
-              <a href="mailto:marzbalskie@gmail.com" 
-                style="color:#777; text-decoration: underline;">
-                marzbalskie@gmail.com
-              </a>.<br>
-              You're receiving this email because you made a booking request with us.
             </td>
-          </tr>
-        </table>
-        </td>
         </tr>
     </table>
 </body>

@@ -566,6 +566,12 @@
     {
         font-size: 14px;
     }
+
+    .booking-form-buttons
+    {
+        gap: 5px;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 515px)
@@ -573,7 +579,7 @@
     .booking-form-section
     {
         padding: 20px 20px 40px 20px;
-        margin-top: 144px;
+        /* margin-top: 144px; */
     }
     .renter-info
     {

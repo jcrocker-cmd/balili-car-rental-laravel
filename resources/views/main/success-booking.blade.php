@@ -6,8 +6,8 @@
  @endsection
 
 @section('content') 
-    @include('main.layout.header-main')
-    @include('main.layout.header2-main')
+    @include('main.layout.topheader')
+    @include('main.layout.header')
     
     <main class="success_page">
         <div class="content">
@@ -19,7 +19,6 @@
             <a href="/home">Check you email for the Booking Details</a>
         </div>
     </main>
-
     @include('main.layout.footer')
 @endsection
 

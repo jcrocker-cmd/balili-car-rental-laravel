@@ -92,8 +92,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'narbajajc@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Balili Car Rental'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hr@alliancesoftware.online'),
+        'name' => env('MAIL_FROM_NAME', 'Cebu Rent N Drive'),
     ],
 
     /*

@@ -22,13 +22,13 @@
         </div>
 
         <div class="booking-form-content">
-            <div id="dailyForm" class="booking-form-section">
+            <div id="dailyForm" class="booking">
                 @include('main.components.bookingforms-content')
             </div>
-            <div id="weeklyForm" class="booking-form-section d-none">
+            <div id="weeklyForm" class="booking d-none">
                 @include('main.components.weekly-bookingforms-content')
             </div>
-            <div id="monthlyForm" class="booking-form-section d-none">
+            <div id="monthlyForm" class="booking d-none">
                 @include('main.components.monthly-bookingforms-content')
             </div>
         </div>
