@@ -1,4 +1,4 @@
-name: Deploy Laravel Application
+name: Deploy Laravel Sail to VPS
 
 on:
   push:
@@ -6,29 +6,47 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    runs-on: self-hosted
+  deploy:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to Ubuntu Server
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Deploy Laravel via SSH
+        uses: appleboy/ssh-action@v1.2.0
         with:
-          host: ${{ secrets.UBUNTU_SERVER_IP }} # Update this to your server's IP
-          username: ${{ secrets.UBUNTU_SERVER_SSH_USERNAME }} # Update this to your server's SSH username
-          password: ${{ secrets.UBUNTU_SERVER_SSH_PASSWORD }} # Update this to your server's SSH password
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+
           script: |
-            cd /var/www/mywebsite.com/ajab-car-rental
-            # Pull the latest changes from the repository
-            git pull origin main
-            # Build the Docker image directly on the server
-            docker build -t johnnote/ajab-car-rental:latest .
-            # Stop and remove the existing container
-            docker-compose down
-            # Start the new container
-            docker-compose up -d
-            # Run migrations and any other necessary commands
-            docker exec -it ajab-car-rental php artisan migrate --force
-            docker exec -it ajab-car-rental php artisan key:generate
+            # Clone the repository if folder does not exist
+            if [ ! -d "/srv/balili-car-rental/.git" ]; then
+              git clone https://github.com/jcrocker-cmd/balili-car-rental-laravel.git /srv/balili-car-rental
+            else
+              cd /srv/balili-car-rental
+              git reset --hard HEAD
+              git pull origin main
+            fi
+
+            cd /srv/balili-car-rental
+
+            # Create .env if missing
+            if [ ! -f ".env" ]; then
+              make env
+            fi
+
+            # Ensure permissions
+            chmod -R 777 storage bootstrap/cache
+
+            # Rebuild containers (Sail)
+            make rebuild
+
+            # Wait PHP-FPM container
+            sleep 10
+
+            # Laravel maintenance tasks
+            make keygen || true
+            make migrate || true
+            make recache
