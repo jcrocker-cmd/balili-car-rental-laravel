@@ -37,14 +37,13 @@ jobs:
               make env
             fi
 
-            # Install dependencies (this is new)
-            composer install --no-dev --optimize-autoloader
-          
             # Ensure permissions
             chmod -R 777 storage bootstrap/cache
-          
-            # Rebuild containers and run Laravel tasks
+            
+            # Rebuild Sail containers
             make rebuild
+            
+            # Laravel tasks
             make keygen || true
             make migrate || true
             make recache
