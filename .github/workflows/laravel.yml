@@ -40,10 +40,15 @@ jobs:
             # Ensure permissions
             chmod -R 777 storage bootstrap/cache
             
-            # Rebuild Sail containers
+            # If Sail does not exist, install dependencies
+            if [ ! -f "./vendor/bin/sail" ]; then
+                composer install --no-dev --optimize-autoloader
+            fi
+            
+            # Now rebuild containers
             make rebuild
             
-            # Laravel tasks
+            # Run Laravel tasks
             make keygen || true
             make migrate || true
             make recache
