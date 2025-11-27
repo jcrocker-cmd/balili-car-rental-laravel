@@ -42,7 +42,7 @@ jobs:
             
             # If Sail does not exist, install dependencies
             if [ ! -f "./vendor/bin/sail" ]; then
-                COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader
+                COMPOSER_ALLOW_SUPERUSER=1 composer install --optimize-autoloader
             fi
 
             # Now rebuild containers
