@@ -24,6 +24,7 @@ services:
             - ".:/var/www/html"
         networks:
             - sail
+            - proxy
         depends_on:
             - mysql
     mysql:
@@ -49,6 +50,8 @@ services:
 networks:
     sail:
         driver: bridge
+    proxy:
+        external: true
 volumes:
     sail-mysql:
         driver: local
