@@ -12,9 +12,9 @@ rebuild:
 recache:
 	./vendor/bin/sail artisan config:cache
 clear:
-	./vendor/bin/sail php artisan cache:clear
-	./vendor/bin/sail php artisan config:clear
-	./vendor/bin/sail php artisan route:clear
+	./vendor/bin/sail php artisan cache:clear && \
+	./vendor/bin/sail php artisan config:clear && \
+	./vendor/bin/sail php artisan route:clear && \
 	./vendor/bin/sail php artisan view:clear
 restart:
 	./vendor/bin/sail restart
