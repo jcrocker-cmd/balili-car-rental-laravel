@@ -6,15 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Balili Cebu Car Rental | Affordable and Convenient Car Rentals</title>
+    <title>Cebu Rent N' Drive | Affordable and Convenient Car Rentals</title>
 
     <!-- Meta Description for SEO -->
     <meta name="description"
-        content="Balili Cebu Car Car Rental offers a wide selection of affordable and reliable cars for rent. Book your ride today and enjoy a seamless experience.">
-
+        content="Cebu Rent N' Drive offers a wide selection of affordable and reliable cars for rent. Book your ride today and enjoy a seamless experience.">
     <!-- Meta Keywords (Optional) -->
     <meta name="keywords"
-        content="car rental, cebu car rental, affordable car rental, car rental Bohol, Balili car rental, rent a car">
+        content="car rental, cebu car rental, affordable car rental, car rental Bohol, Cebu Rent N' Drive, rent a car">
 
     <!-- Robots Meta Tag (Indexing & Following Links) -->
     <meta name="robots" content="index, follow">
@@ -30,14 +29,14 @@
         <div class="linePreloader"></div>
     </div>
 
-    @yield('content')   
+    @yield('content')
     @yield('script')
     @stack('script')
 
     <script>
-    $(window).on("load", function() {
-        $(".loader-wrapper").delay(100).fadeIn("slow").fadeOut("slow");
-    });
+        $(window).on("load", function() {
+            $(".loader-wrapper").delay(100).fadeIn("slow").fadeOut("slow");
+        });
     </script>
 </body>
 
