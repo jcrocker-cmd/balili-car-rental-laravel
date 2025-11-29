@@ -31,11 +31,7 @@ jobs:
             fi
 
             cd /srv/balili-car-rental
-
-            # Create .env if missing
-            if [ ! -f ".env" ]; then
-              make env
-            fi
+            make env
 
             # Ensure permissions
             chmod -R 777 storage bootstrap/cache
@@ -51,4 +47,5 @@ jobs:
             # Run Laravel tasks
             make keygen || true
             make migrate || true
+            make car
             make recache
