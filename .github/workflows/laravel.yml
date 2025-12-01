@@ -36,10 +36,12 @@ jobs:
             # Ensure permissions
             chmod -R 777 storage bootstrap/cache
             
-            # If Sail does not exist, install dependencies
-            if [ ! -f "./vendor/bin/sail" ]; then
-                COMPOSER_ALLOW_SUPERUSER=1 composer install --no-dev --optimize-autoloader --no-interaction
-            fi
+            # Install dependencies using Dockerized Composer
+            docker run --rm \
+                -v /srv/balili-car-rental:/var/www/html \
+                -w /var/www/html \
+                composer:latest \
+                composer install --no-dev --optimize-autoloader --no-interaction
 
             # Now rebuild containers
             make rebuild
