@@ -1,4 +1,4 @@
-name: Deploy Laravel Sail to VPS
+name: Deploy Laravel to VPS
 
 on:
   push:
@@ -13,15 +13,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy Laravel via SSH
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
-
           script: |
-            # Clone the repository if folder does not exist
+            # Clone or update repo
             if [ ! -d "/srv/balili-car-rental/.git" ]; then
               git clone https://github.com/jcrocker-cmd/balili-car-rental-laravel.git /srv/balili-car-rental
             else
@@ -31,23 +30,18 @@ jobs:
             fi
 
             cd /srv/balili-car-rental
-            make env
 
-            # Ensure permissions
-            chmod -R 777 storage bootstrap/cache
-            
-            # Install dependencies using Dockerized Composer
-            docker run --rm \
-                -v /srv/balili-car-rental:/var/www/html \
-                -w /var/www/html \
-                composer:latest \
-                composer install --no-dev --optimize-autoloader --no-interaction
+            # Build production image
+            docker compose build --no-cache laravel.test
 
-            # Now rebuild containers
-            make rebuild
-            
-            # Run Laravel tasks
-            make keygen || true
-            make migrate || true
-            make car
-            make recache
+            # Stop and remove old containers
+            docker compose down
+
+            # Start containers
+            docker compose up -d
+
+            # Run Laravel commands inside container
+            docker compose exec laravel.test php artisan config:cache
+            docker compose exec laravel.test php artisan route:cache
+            docker compose exec laravel.test php artisan view:cache
+            docker compose exec laravel.test php artisan migrate --force
