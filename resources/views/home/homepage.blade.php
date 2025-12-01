@@ -1,25 +1,24 @@
 @extends('home.layout.master')
 
-@section('title', 'Balili Self-Drive Car Rental')
+@section('title', 'Cebu Rent N\' Drive | Cebu Car Rentals')
 
 @section('styles')
-    @include('home.assets.style')
-    @include('home.assets.bootstrapcss')
+@include('home.assets.style')
+@include('home.assets.bootstrapcss')
 @endsection
 
-@section('content') 
-    @include('home.layout.topheader')
-    @include('home.layout.header')
-    @include('home.components.homepage-content')
-    @include('home.components.featured-content')
-    @include('home.components.howitworks-content')
-    @include('home.components.contactus-content')
-    @include('home.layout.footer')
+@section('content')
+@include('home.layout.topheader')
+@include('home.layout.header')
+@include('home.components.homepage-content')
+@include('home.components.featured-content')
+@include('home.components.howitworks-content')
+@include('home.components.contactus-content')
+@include('home.layout.footer')
 @endsection
 
 
 @section('script')
-    @include('home.assets.script')
-    @include('home.assets.bootstrapjs')
+@include('home.assets.script')
+@include('home.assets.bootstrapjs')
 @endsection
-
