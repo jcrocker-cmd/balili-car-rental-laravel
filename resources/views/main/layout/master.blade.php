@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Cebu Rent N' Drive | Affordable and Convenient Car Rentals</title>
+    <title>Cebu Rent N' Drive | Cebu Car Rentals</title>
 
     <!-- Meta Description for SEO -->
     <meta name="description"
@@ -34,9 +34,9 @@
     @stack('script')
 
     <script>
-        $(window).on("load", function() {
-            $(".loader-wrapper").delay(100).fadeIn("slow").fadeOut("slow");
-        });
+    $(window).on("load", function() {
+        $(".loader-wrapper").delay(50).fadeIn("slow").fadeOut("slow");
+    });
     </script>
 </body>
 
