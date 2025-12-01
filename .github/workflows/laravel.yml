@@ -31,11 +31,10 @@ jobs:
 
             cd /srv/balili-car-rental
 
+            docker compose down --remove-orphans
+
             # Build production image
             docker compose build --no-cache laravel.test
-
-            # Stop and remove old containers
-            docker compose down
 
             # Start containers
             docker compose up -d
