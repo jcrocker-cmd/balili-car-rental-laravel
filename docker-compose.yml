@@ -14,8 +14,10 @@ services:
         volumes:
             - .:/var/www/html # Mount code for live updates
         networks:
-            - sail
-            - proxy
+            sail:
+            proxy:
+                aliases:
+                    - balili-car-rental   # <-- Add this alias
         depends_on:
             - mysql
 
