@@ -14,10 +14,7 @@ services:
         volumes:
             - .:/var/www/html # Mount code for live updates
         networks:
-            sail:
-            proxy:
-                aliases:
-                    - balili-car-rental   # <-- Add this alias
+          - proxy
         depends_on:
             - mysql
 
@@ -32,15 +29,13 @@ services:
         volumes:
             - sail-mysql:/var/lib/mysql
         networks:
-            - sail
+            - proxy
         healthcheck:
             test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
             retries: 5
             timeout: 5s
 
 networks:
-    sail:
-        driver: bridge
     proxy:
         external: true # Connects to your existing Nginx Proxy Manager network
 
