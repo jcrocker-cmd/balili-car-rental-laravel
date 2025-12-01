@@ -34,13 +34,13 @@ jobs:
             docker compose down --remove-orphans
 
             # Build production image
-            docker compose build --no-cache laravel.test
+            docker compose build --no-cache laravel
 
             # Start containers
             docker compose up -d
 
             # Run Laravel commands inside container
-            docker compose exec laravel.test php artisan config:cache
-            docker compose exec laravel.test php artisan route:cache
-            docker compose exec laravel.test php artisan view:cache
-            docker compose exec laravel.test php artisan migrate --force
+            docker compose exec laravel php artisan config:cache
+            docker compose exec laravel php artisan route:cache
+            docker compose exec laravel php artisan view:cache
+            docker compose exec laravel php artisan migrate --force
